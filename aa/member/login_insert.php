@@ -4,22 +4,26 @@
     $pass= $_POST['password'];
 
     if(!$id){
-        echo "
+        echo('
         <script>
-            alert('아이디를 입력하세요.');
-            history.back();
+        swal("","아이디를 입력하세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ";
-         exit;
+        ');
+        exit;
     }
     if(!$pass){
-        echo "
+        echo('
         <script>
-            alert('비밀번호를 입력하세요.');
-            history.back();
+        swal("","비밀번호를 입력하세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ";
-         exit;
+        ');
+        exit;
     }
 
   $conn= mysqli_connect('test.crwx1himfqyb.ap-northeast-2.rds.amazonaws.com:3306','admin','shekdms8260','test');
@@ -30,12 +34,14 @@
     $rowNum= mysqli_num_rows($result);
 
     if(!$rowNum){
-        echo "
+        echo('
         <script>
-            alert('아이디와 비밀번호를 확인하세요.');
-            history.back();
+        swal("","아이디와 비밀번호를 확인하세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ";
+        ');
         exit;
     }
  

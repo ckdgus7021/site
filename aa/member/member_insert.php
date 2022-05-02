@@ -1,6 +1,8 @@
 <DOCTYPE! HTML>
     <html>
         <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+        <meta charset="UTF-8">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <?php
@@ -16,57 +18,70 @@
 
 
     if (!$id){
-        echo("
+        echo('
         <script>
-        swal('','아이디를 입력하세요.');
+        swal("","아이디를 입력해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
     if (!$pass){
-        echo("
+        echo('
         <script>
-        alert('비밀번호를 입력해주세요.');
-        history.back();
+        swal("",비밀번호를 입력해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
     if (!$name){
-        echo("
+        echo('
         <script>
-        alert('이름을 입력해주세요.');
-        history.back();
+        swal("",이름을 입력해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
     if (!$email1){
-        echo("
+        echo('
         <script>
-        alert('이메일을 입력해주세요.');
-        history.back();
+        swal("",이메일을 입력해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
     if (!$email2){
-        echo("
+        echo('
         <script>
-        alert('이메일을 입력해주세요.');
-        history.back();
+        swal("",이메일을 입력해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
     if ($pass!=$pass_confirm){
-        echo("
+        echo('
         <script>
-        alert('비밀번호를 확인해주세요.');
-        history.back(); 
+        swal("",비밀번호를 확인해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
-    exit;    
+        ');
+        exit;  
     }
 
   $conn= mysqli_connect('test.crwx1himfqyb.ap-northeast-2.rds.amazonaws.com:3306','admin','shekdms8260','test');
@@ -78,24 +93,28 @@
     $rowNum= mysqli_num_rows($result);
 
     if($rowNum){
-        echo("
-            <script>
-                alert('해당 아이디가 존재합니다.');
-                history.back(); 
-            </script>
-        ");
+        echo('
+        <script>
+        swal("","해당 아이디가 존재합니다.", "warning")
+        .then(() => {
+        window.history.back();
+        });
+        </script>
+        ');
         exit;
     }
     $sql= "SELECT * FROM user WHERE email='$email'";
     $result=mysqli_query($conn, $sql);
     $rowNum= mysqli_num_rows($result);
     if($rowNum){
-        echo("
-            <script>
-                alert('해당 이메일이 존재합니다.');
-                history.back(); 
-            </script>
-        ");
+        echo('
+        <script>
+        swal("","해당 이메일이 존재합니다.", "warning")
+        .then(() => {
+        window.history.back();
+        });
+        </script>
+        ');
         exit;
     }
     
@@ -104,10 +123,13 @@
     mysqli_query($conn,$sql);
     mysqli_close($conn);
 
-    echo "
+    echo('
         <script>
-        window.location.href='  ./index.php';
+        swal("","회원가입이 완료되었습니다.", "success)
+        .then(() => {
+            window.location.href="  ./index.php";
+        });
         </script>
-    ";
+        ');
 ?>
 </html>
