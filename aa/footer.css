@@ -1,0 +1,34 @@
+.bottom_bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    display: inline-block;
+    line-height: 70px;
+}
+
+.bottom_menu {
+    width: 26%;
+    text-align: center;
+    color: white;
+    float: left;
+}
+
+.bottom_menu_line {
+    width: 10%;
+    color: white;
+    float: left;
+    font-size: 40px;
+    position: relative;
+    text-align: center;
+    bottom: 7%;
+}
+
+.bottom_menu img {
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+}

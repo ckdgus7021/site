@@ -1,0 +1,66 @@
+.blind {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: none;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .startRadio {
+    display: inline-block;
+    overflow: hidden;
+    height: 40px;
+    position: relative;
+  }
+  .startRadio:after {
+      content: "";
+      display: block;
+      position: relative;
+      z-index: 0;
+      height: 40px;
+      background: url("./img/star.png")
+        repeat-x 0 0;
+      background-size: contain;
+      pointer-events: none;
+    }
+  .startRadio__box {
+      position: relative;
+      z-index: 0;
+      float: left;
+      width: 20px;
+      height: 40px;
+      cursor: pointer;
+    }
+  .startRadio input {
+        opacity: 1 !important;
+        height: 1 !important;
+        width: 1 !important;
+        position: absolute !important;
+      }
+  .rest input {
+        opacity: 1 !important;
+        height: 1 !important;
+        width: 1 !important;
+        position: absolute !important;
+      }
+
+    .startRadio__box:checked + label + .startRadio__img {
+          background-color: #0084ff;
+        }
+
+  .startRadio__img {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 500px;
+      height: 40px;
+      pointer-events: none;
+    }
+
+.abc input {
+  position: absolute;
+  bottom: 0;
+}

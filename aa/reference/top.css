@@ -1,0 +1,79 @@
+#top{
+    background-color:black;
+    height: 70px;
+    position: relative;
+    margin:0;
+    padding:0;
+    top: 0%;
+}
+
+ul{
+    list-style-type: none;
+    color:white;
+    line-height: 70px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+.title{
+    font-size:30px;
+    text-align: center;
+    color:white;
+    vertical-align: center;
+    position: absolute;
+    left: 40%;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+    text-align:center;
+}
+
+.toggle{
+    position:absolute;
+    top:70px
+}
+
+.side_ba{
+    width: 50px;
+    height: 100%;
+    background-color: red;
+    z-index: 10;
+    position: absolute;
+    top: 0%;
+}
+
+.side_menu{
+    width: 100px;
+    height: 100%;
+    background-color: aqua;
+    z-index: 10;
+    position: absolute;
+    top: 0%;
+    left: 0px;
+}
+
+.side_button{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    z-index: 11;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+}
+
+.join{
+    margin-top: 50px;
+}
+
+#top_menu{
+    margin-left: 10px;
+}
+
+.big_menu{
+    margin-left: 10px;
+}

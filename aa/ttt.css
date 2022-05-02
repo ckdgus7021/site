@@ -1,0 +1,35 @@
+#menu {
+    list-style-type: none;
+    line-height: 70px;
+    padding-top: 100px;
+}
+
+#menu > .join {
+    font-size: 30px;
+    padding-left: 10%;
+}
+a {
+    text-decoration: none;
+    color:#fff;
+    -webkit-tap-highlight-color : transparent;
+}
+
+
+.sidebar > ul > .big_menu {
+    position: relative;
+    padding: 8px 8px 8px 10%;
+    font-size: 20px;
+}
+
+.sidebar > ul > .big_menu > .small_menu {
+    position: relative;
+    /*transform: scaleY(0);*/
+    padding: 8px 8px 8px 10%;
+    font-size: 15px;
+    transition: 0.35s;
+}
+
+.sidebar > ul > li:hover > .small_menu {
+    /*transform: scaleY(1);
+    transition: 0.35s;*/
+}
