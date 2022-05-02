@@ -1,6 +1,6 @@
 <div class="bottom_bar">
             <div class="bottom_menu">
-                <a href="./map.php"><img src="./img/map.png"></a>
+                <a href="https://testasdqwe.herokuapp.com/daily.php"><img src="./img/map.png"></a>
             </div>
             <div class="bottom_menu_line">
                 |

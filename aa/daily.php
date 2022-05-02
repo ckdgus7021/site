@@ -13,13 +13,19 @@ $sql = "select menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-echo "<table><tr>";
-echo '<th>' . $row['menu'] . '<img src="'.$row['image'] . '">' . '</th>';
-echo "</tr></table>";
-    }   }else{
-        echo "메뉴 정보가 없습니다.";
-        }
-        mysqli_close($conn);
+      echo "<table id='qq' class='ee'><tr>";
+      echo '<th>'. $row['menu']. '<br>'. '<img src="'.$row['image'].'" >'. '</th>';
+      echo '<td class=abc>' . $row['price'] . '원<br>
+      <form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=text name="restaurant" value="rest1" style="display: none;">
+      <input type=text name="menu", value="'. $row['menu'] .'" style="display: none;"><input type=text name="rec" value=1 style="display: none;">
+      <label><input type=submit value=추천 style="display: none;"><i class="fa-solid fa-thumbs-up" style="border: 2px solid #2199e8; padding: 3px; color: #2199e8; border-radius: 5px;";>&nbsp;'
+       . $row['sum(recommend)'] .'</i></label></form>' .  '</td>';
+      echo "</tr></table>";
+    }
+    }else{
+    echo "메뉴 정보가 없습니다.";
+    }
+    mysqli_close($conn);
 
 
 ?>
