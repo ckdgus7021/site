@@ -1,3 +1,11 @@
+<DOCTYPE! HTML>
+    <html>
+        <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
 <?php
  
     $id= $_POST['id'];
@@ -6,7 +14,7 @@
     if(!$id){
         echo('
         <script>
-        swal("","아이디를 입력해주세요.", "warning")
+        swal("","아이디를 입력하세요.", "warning")
         .then(() => {
         window.history.back();
         });
@@ -60,3 +68,4 @@
     ";
  
 ?>
+</html>
