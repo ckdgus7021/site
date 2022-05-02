@@ -125,7 +125,7 @@
 
     echo('
         <script>
-        swal("","회원가입이 완료되었습니다.", "success)
+        swal("","회원가입이 완료되었습니다.", "success")
         .then(() => {
             window.location.href="  ./index.php";
         });
