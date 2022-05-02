@@ -148,6 +148,7 @@
                 </li>
 
             </ul>
+            <a href="https://testasdqwe.herokuapp.com/daily.php"><img src="https://testasdqwe.herokuapp.com/img/2Q.png"></a>
 
             <!--ul class="paginglist">
 
