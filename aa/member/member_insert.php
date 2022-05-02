@@ -1,3 +1,8 @@
+<DOCTYPE! HTML>
+    <html>
+        <head>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
 <?php
     $id= $_POST['id'];
     $pass= $_POST['password'];
@@ -13,8 +18,7 @@
     if (!$id){
         echo("
         <script>
-        alert('아이디를 입력해주세요.');
-        history.back();
+        swal('','아이디를 입력하세요.');
         </script>
         ");
         exit;
@@ -106,3 +110,4 @@
         </script>
     ";
 ?>
+</html>
