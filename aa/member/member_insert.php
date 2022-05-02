@@ -31,7 +31,7 @@
     if (!$pass){
         echo('
         <script>
-        swal("",비밀번호를 입력해주세요.", "warning")
+        swal("","비밀번호를 입력해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
@@ -42,7 +42,7 @@
     if (!$name){
         echo('
         <script>
-        swal("",이름을 입력해주세요.", "warning")
+        swal("","이름을 입력해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
@@ -53,7 +53,7 @@
     if (!$email1){
         echo('
         <script>
-        swal("",이메일을 입력해주세요.", "warning")
+        swal("","이메일을 입력해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
@@ -64,7 +64,7 @@
     if (!$email2){
         echo('
         <script>
-        swal("",이메일을 입력해주세요.", "warning")
+        swal("","이메일을 입력해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
@@ -75,7 +75,7 @@
     if ($pass!=$pass_confirm){
         echo('
         <script>
-        swal("",비밀번호를 확인해주세요.", "warning")
+        swal("","비밀번호를 확인해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
