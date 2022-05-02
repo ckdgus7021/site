@@ -6,7 +6,7 @@
     if(!$id){
         echo('
         <script>
-        swal("","아이디를 입력하세요.", "warning")
+        swal("","아이디를 입력해주세요.", "warning")
         .then(() => {
         window.history.back();
         });
