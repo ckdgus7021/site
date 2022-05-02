@@ -87,6 +87,9 @@ echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
   <input type = 'submit' name ='btn' value='별점주기' style="margin-top: 30px" class="abc">
 </div>
 </form>-->
+<?php
+echo date('Y-m-d');;
+?>
 <form name="myform" id="myform" method="post" action="./star_insert.php">
     <fieldset class="other">
     <input type="text" name="restaurant" value="rest1" style="display: none;">

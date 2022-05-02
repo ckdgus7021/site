@@ -11,6 +11,7 @@
     $restaurant=$_POST['restaurant'];
     $rec=$_POST['rec'];
     $menu=$_POST['menu'];
+    $date = date('Y-m-d');;
 
     if (!$userid){
         echo("
@@ -28,7 +29,7 @@
    
   
 
-    $sql= "INSERT INTO rec(restaurant, menu, id, recommend) VALUES('$restaurant','$menu','$userid','$rec')";
+    $sql= "INSERT INTO rec(restaurant, menu, id, recommend, date) VALUES('$restaurant','$menu','$userid','$rec', '$date')";
  
     mysqli_query($conn,$sql);
     mysqli_close($conn);
