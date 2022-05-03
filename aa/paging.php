@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - 테이블 페이징 처리하기</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./paging.css">
 
 </head>
 <body>
@@ -82,7 +82,7 @@
 
 </table>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./paging.js"></script>
 
 </body>
 </html>
