@@ -50,7 +50,7 @@
         <li id="big1" class="big_menu"><a href="#">MENU1</a>
             <ul id="small1" class="small_menu">
                 <li><a href="./rest1.php">small menu1</a></li>
-                <li><a href="rest2">small menu2</a></li>
+                <li><a href="./paging.php">small menu2</a></li>
                 <li><a href="rest3">small menu3</a></li>
             </ul>
         </li>
