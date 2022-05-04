@@ -56,6 +56,18 @@
         </li>
         <li id="big2" class="big_menu"><a href="#">MENU2</a>
             <ul id="small2" class="small_menu">
+                <?php
+                include 'dbconn.php';
+                $sql = "select * from restaurant where category='한식'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)){
+                echo '<li style="margin-top:5px;"><a href="' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                }
+            }   else{
+                    echo "정보가 없습니다.";
+                }
+                ?>
                 <li><a href="rest4">small menu1</a></li>
                 <li><a href="rest5">small menu2</a></li>
                 <li><a href="rest6">small menu3</a></li>

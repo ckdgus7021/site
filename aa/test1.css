@@ -9,8 +9,11 @@ input[type="checkbox"] {display: none;}
 [id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
 [id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
 [id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
-[class="sidebar"] {width:200px;height:100%;background:#222;position:fixed;top:0;left:-300px;z-index:5;transition:all .35s;}
+[class="sidebar"] {width:200px;height:200px;background:#222;position:fixed;top:0;left:-300px;z-index:5;transition:all .35s;}
 input[id="menuicon"]:checked + label + div {left:0;}
+div.sidebar {
+	overflow: scroll;
+}
 
 
 * {margin:0;padding:0;box-sizing:border-box;}
