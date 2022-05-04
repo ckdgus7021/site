@@ -6,6 +6,15 @@
     </head>
 
 <?php
+
+   echo "<style>tr { position: relative;} </style>";
+   echo "<style>th { width: 150px; padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; }</style>";
+   echo "<style>td { width: 150px; padding: 10px; text-align: center; vertical-align: top; border-bottom: 1px solid #ccc;}</style>";
+   echo "<style> .abc { position: absolute; bottom:0;}</style>";
+   echo "<table><tbody>";
+   echo "<style>img { width: 50px; height: 50px;} </style>";
+   echo "<style>input[type='text'] {width: 100px;} </style>";
+
 include 'dbconn.php';
 //$yesterday = "date('Y-m-d', strtotime('-1 day'));";
 $yesterday = "date('Y-m-d');";
