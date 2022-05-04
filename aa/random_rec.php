@@ -1,21 +1,3 @@
-<div class="bottom_bar">
-            <div class="bottom_menu">
-                <a href="https://testasdqwe.herokuapp.com/daily.php"><img src="./img/map.png"></a>
-            </div>
-            <div class="bottom_menu_line">
-                |
-            </div>
-            <div class="bottom_menu">
-                <a href="#" onclick="window.open('./random1.php', '메뉴추천', 'width=400, height=500'); return false"><img src="./img/s.png"></a>
-            </div>
-            <div class="bottom_menu_line">
-                |
-            </div>
-            <div class="bottom_menu">
-                <!--<a href="#" onclick="window.open('./random1.php', '메뉴추천', 'width=400, height=500'); return false"><img src="./img/d.png"></a>-->
-                <a href="#" class="openMask"><img src="./img/d.png"></a>
-            </div>
-</div>
 <?php
 echo "<style>
 #mask {
@@ -78,14 +60,16 @@ $(document).ready(function(){
         $(".window").hide();
     });
 });
+function rrr(){
+    $("#random_rec").load(location.href + " #random_rec");
+}
 </script>
-<div id="mask" style="position: absolute;"></div><div class="window" style="position: relative; width: 200px; height: 200px; top: 0; border: solid 1px #2199e8; border-radius: 8px;">
-<span style="position: absolute; display: inline-block; background-color: yellow; width: 100%; height: 100%; border: solid 1px #2199e8; border-radius: 8px; padding-left: 8px; padding-top: 5px;">
-<h1>추천메뉴</h1><br>'
+<div id="mask" style="position: absolute;"></div><div class="window" style="position: absolute; width: 200px; height: 200px; border: solid 1px #2199e8; border-radius: 8px; margin-top: 20%;">
+<div id="random_rec" style="position: absolute; background-color: yellow; width: 100%; height: 100%; border: solid 1px #2199e8; border-radius: 8px;">
+<h1>메뉴추천</h1><br>'
  . $row["menu"] .
  '<br>[' . $row["restaurant"] . 
  ']<br><br><a href="./' . $row ["restaurant"] . '.php" style="color: black">음식점이동</a><br><br>
- <!--<form name="not" method="post">
- <input type="submit" value="다시">
-</form>--></div></span>';
+ <a href="#" onclick="rrr();"><img style="width: 20px; height: 20px;"src="./img/2Q.png"></a>
+ </div></div>';
 ?>

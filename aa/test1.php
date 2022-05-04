@@ -150,7 +150,7 @@
 
             </ul>
 <div>
-            <div style="width: 45%; float: left; overflow: scroll; margin: 10px; border: solid 1px; border-radius: 8px;">
+            <div style="width: 45%; height: 300px; float: left; overflow: scroll; margin: 10px 5px 10px 10px; border: solid 1px; border-radius: 8px;">
             <?php
 
 echo "<style>tr { position: relative;} </style>";
@@ -183,10 +183,13 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
             </div>
-            <div style="width: 40%; float: right; overflow: scroll; margin: 10px; border: solid 1px; border-radius: 8px;">
+            <div style="width: 45%; height: 300px; float: right; overflow: scroll; margin: 10px 10px 10px 5px; border: solid 1px; border-radius: 8px;">
             adsfsfds
             </div>
+            
 </div>
+<div style="float: left; left: 30px;"><a href="#" class="openMask"><img src="./img/d.png"></a></div>
+<?php include "./random_rec.php" ?>
 
             <!--<a href="https://testasdqwe.herokuapp.com/daily.php"><img src="https://testasdqwe.herokuapp.com/img/2Q.png"></a>-->
 
