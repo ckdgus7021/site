@@ -8,8 +8,8 @@
     <link type="text/css" rel="stylesheet" href="./radio.css">
     <!--<link type="text/css" rel="stylesheet" href="./star.css">-->
     <link type="text/css" rel="stylesheet" href="./test1.css">
-    <link type="text/css" rel="stylesheet" href="./ttt.css">
     <link type="text/css" rel="stylesheet" href="./footer.css">
+    <link type="text/css" rel="stylesheet" href="./header.css">
     </head>
     <?php 
 
@@ -29,12 +29,13 @@ if( isset($_SESSION['username'])) $username= $_SESSION['username'];
 </header>
 
 
-    <h1 class="other">rest1</h1>
+    
     <?php
 include 'dbconn.php';
-$sql = "SELECT round(avg(star),2) FROM star";
+$sql = "SELECT round(avg(star),2), restaurant FROM star where restaurant='rest1'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
+echo '<h1 class="other">' . $row['restaurant'] . '</h1>';
 echo '<a href="./map.php#rest1" style="text-decoration: none; color: black;" class="other"><img src="./img/map.png"></a><br>';
 echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
 
@@ -87,9 +88,7 @@ echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
   <input type = 'submit' name ='btn' value='별점주기' style="margin-top: 30px" class="abc">
 </div>
 </form>-->
-<?php
-echo date('Y-m-d');;
-?>
+
 <form name="myform" id="myform" method="post" action="./star_insert.php">
     <fieldset class="other">
     <input type="text" name="restaurant" value="rest1" style="display: none;">
@@ -115,7 +114,8 @@ echo date('Y-m-d');;
 </script>-->
 <?php
 
-   $sql = "select menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) from menu left join rec on menu.menu=rec.menu where menu.restaurant='rest1' group by menu.menu order by sum(recommend) desc";
+   $sql = "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
+   from menu left join rec on menu.menu=rec.menu where menu.restaurant='rest1' group by menu.menu order by sum(recommend) desc";
    $result = mysqli_query($conn, $sql);
 
    echo "<style>tr { position: relative;} </style>";
@@ -135,8 +135,8 @@ echo date('Y-m-d');;
      echo "<table id='qq' class='ee'><tr>";
      echo '<th>'. $row['menu']. '<br>'. '<img src="'.$row['image'].'" >'. '</th>';
      echo '<td class=abc>' . $row['price'] . '원<br>
-     <form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=text name="restaurant" value="rest1" style="display: none;">
-     <input type=text name="menu", value="'. $row['menu'] .'" style="display: none;"><input type=text name="rec" value=1 style="display: none;">
+     <form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=hidden name="restaurant" value="' . $row['restaurant'] . '">
+     <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
      <label><input type=submit value=추천 style="display: none;"><i class="fa-solid fa-thumbs-up" style="border: 2px solid #2199e8; padding: 3px; color: #2199e8; border-radius: 5px;";>&nbsp;'
       . $row['sum(recommend)'] .'</i></label></form>' .  '</td>';
      echo "</tr></table>";

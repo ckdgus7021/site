@@ -16,7 +16,9 @@
    echo "<style>input[type='text'] {width: 100px;} </style>";
 
 include 'dbconn.php';
-$sql = "select menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) from menu left join rec on menu.menu=rec.menu where rec.date=CURDATE() - INTERVAL 1 DAY group by menu.menu order by sum(recommend) desc";
+$sql = "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend)
+from menu left join rec on menu.menu=rec.menu
+where rec.date=CURDATE() - INTERVAL 1 DAY group by menu.menu order by sum(recommend) desc";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {

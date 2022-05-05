@@ -162,7 +162,12 @@ echo "<style>img.qwer { width: 50px; height: 50px;} </style>";
 echo "<style>input[type='text'] {width: 100px;} </style>";
 
 include 'dbconn.php';
-$sql = "select menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) from menu left join rec on menu.menu=rec.menu where rec.date=CURDATE() - INTERVAL 2 DAY group by menu.menu order by sum(recommend) desc";
+$sql = 
+
+"SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
+from menu left join rec on menu.menu=rec.menu 
+where rec.date=CURDATE() - INTERVAL 3 DAY group by menu.menu order by sum(recommend) desc limit 10";
+
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
  while($row = mysqli_fetch_assoc($result)) {
