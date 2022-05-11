@@ -153,30 +153,59 @@ $sql =
 
 "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
 from menu left join rec on menu.menu=rec.menu 
-where rec.date=CURDATE() - INTERVAL 5 DAY group by menu.menu order by sum(recommend) desc limit 10";
+where rec.date=CURDATE() - INTERVAL 9 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
  while($row = mysqli_fetch_assoc($result)) {
    echo "<table id='qq' class='ee'><tr>";
-   echo '<th>'. $row['menu']. '<br>'. '<img class=qwer src="'.$row['image'].'" >'. '</th>';
-   echo '<td class=abc>' . $row['price'] . '원<br>
-   <form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=text name="restaurant" value="rest1" style="display: none;">
-   <input type=text name="menu", value="'. $row['menu'] .'" style="display: none;"><input type=text name="rec" value=1 style="display: none;">
-   <label><input type=submit value=추천 style="display: none;"><i class="fa-solid fa-thumbs-up" style="border: 2px solid #2199e8; padding: 3px; color: #2199e8; border-radius: 5px;";>&nbsp;'
-    . $row['sum(recommend)'] .'</i></label></form>' .  '</td>';
+   echo '<th>'. $row['menu']. '<br>'. '<img class=qwer src="'.$row['image'].'" >'. '<br>' . $row['price'] . '</th>';
    echo "</tr></table>";
  }
  }else{
  echo "메뉴 정보가 없습니다.";
  }
- mysqli_close($conn);
 
 
 ?>
             </div>
             <div style="width: 45%; height: 300px; float: right; overflow: scroll; margin: 10px 10px 10px 5px; border: solid 1px; border-radius: 8px;">
-            adsfsfds
+            <table class="list-table">
+      <thead>
+          <tr>
+                <th>제목</th>
+                <th>글쓴이</th>
+            </tr>
+        </thead>
+            <?php
+          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc limit 5";
+          $result = mysqli_query($conn, $sql);
+            while($board = mysqli_fetch_array($result))
+            {
+              //title변수에 DB에서 가져온 title을 선택
+              $title=$board["title"]; 
+              if(strlen($title)>30)
+              { 
+                //title이 30을 넘어서면 ...표시
+                $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+              }
+        ?>
+        <tbody>
+        <tr>
+          <td>
+<form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
+<label>
+<?php echo $title;?>
+<input type="hidden" name="hit" value="1">
+<input type="submit" style="display: none;">
+<label>
+</form>
+</td>
+          <td><?php echo $board['id']?></td>
+        </tr>
+      </tbody>
+      <?php } ?>
+    </table>
             </div>
             
 </div>

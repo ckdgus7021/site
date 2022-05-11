@@ -1,10 +1,15 @@
 <?php include  "../dbconn.php"; include "../session_start.php" ?>
 <!doctype html>
 <head>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 <meta charset="UTF-8">
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="./board.css" />
+<link rel="stylesheet" type="text/css" href="../header.css" />
 </head>
+<header>
+	<?php include "../header.php"; ?>
+</header>
 <body>
 <div id="board_area"> 
   <h1>자유게시판</h1>
@@ -12,16 +17,16 @@
     <table class="list-table">
       <thead>
           <tr>
-              <th width="70">번호</th>
-                <th width="500">제목</th>
-                <th width="120">글쓴이</th>
-                <th width="100">작성일</th>
-                <th width="100">조회수</th>
+              <th width="4%">번호</th>
+                <th width="30%">제목</th>
+                <th width="10%">글쓴이</th>
+                <th width="10%">작성일</th>
+                <th width="10%">조회수</th>
             </tr>
         </thead>
         <?php
-        // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-          $sql = "select * from board order by num desc";
+        
+          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -33,12 +38,29 @@
                 $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
               }
         ?>
+      <!--<tbody>
+        <tr>
+          <td width="70"><?php //echo $board['num']; ?></td>
+          <td width="500"><a href="./board_read.php?num=<?php //echo $board["num"];?>"><?php //echo $title;?></a></td>
+          <td width="120"><?php //echo $board['id']?></td>
+          <td width="100"><?php //echo $board['date']?></td>
+        </tr>
+      </tbody>-->
       <tbody>
         <tr>
-          <td width="70"><?php echo $board['num']; ?></td>
-          <td width="500"><a href="./board_read.php?num=<?php echo $board["num"];?>"><?php echo $title;?></a></td>
-          <td width="120"><?php echo $board['id']?></td>
-          <td width="100"><?php echo $board['date']?></td>
+          <td width="4%"><?php echo $board['num']; ?></td>
+          <td width="30%">
+<form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
+<label>
+<?php echo $title;?>
+<input type="hidden" name="hit" value="1">
+<input type="submit" style="display: none;">
+<label>
+</form>
+</td>
+          <td width="10%"><?php echo $board['id']?></td>
+          <td width="10%"><?php echo $board['date']?></td>
+          <td width="10%"><?php echo $board['sum(hit)']?></td>
         </tr>
       </tbody>
       <?php } ?>
@@ -47,5 +69,7 @@
       <a href="./board_write.php"><button>글쓰기</button></a>
     </div>
   </div>
+  <a href="../test1.php"><img src="../img/2Q.png"</a>
 </body>
 </html>
+

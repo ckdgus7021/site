@@ -1,12 +1,5 @@
 <?php
-    session_start();
- 
-    $userid="";
-    $username="";
-
- 
-    if( isset($_SESSION['userid'])) $userid= $_SESSION['userid'];
-    if( isset($_SESSION['username'])) $username= $_SESSION['username'];
+    include "../session_start.php";
 
     $restaurant=$_POST['restaurant'];
     $rec=$_POST['rec'];
@@ -24,8 +17,7 @@
     }
 
 
-    $conn= mysqli_connect('test.crwx1himfqyb.ap-northeast-2.rds.amazonaws.com:3306','admin','shekdms8260','test');
-    mysqli_query($conn,"set names utf8");
+    include "../dbconn.php";
    
   
 

@@ -16,7 +16,7 @@
 </script>
 
 
-<a href="./test1.php"><img src="./img/22-removebg-preview.png" style="height: 100px; width: 200px; position: absolute; margin-left: 140px; margin-top:0; top: 0;"></a>
+<a href="/cc/test1.php"><img src="/cc/img/22-removebg-preview.png" style="height: 100px; width: 200px; position: absolute; margin-left: 140px; margin-top:0; top: 0;"></a>
 <input type="checkbox" id="menuicon">
 
     <label for="menuicon">
