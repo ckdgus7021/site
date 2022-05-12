@@ -24,7 +24,7 @@ ul li {
 
 /* 게시판 목록 */
 #board_area {
-	width: 500px;
+	width: 100%;
 	position: relative;
 }
 .list-table {
