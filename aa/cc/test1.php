@@ -153,7 +153,7 @@ $sql =
 
 "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
 from menu left join rec on menu.menu=rec.menu 
-where rec.date=CURDATE() - INTERVAL 9 DAY group by menu.menu order by sum(recommend) desc limit 10";
+where rec.date=CURDATE() - INTERVAL 10 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {

@@ -18,7 +18,7 @@
       <thead>
           <tr>
               <th width="4%">번호</th>
-                <th width="30%">제목</th>
+                <th width="50%">제목</th>
                 <th width="10%">글쓴이</th>
                 <th width="10%">작성일</th>
                 <th width="10%">조회수</th>
@@ -69,7 +69,7 @@
       <a href="./board_write.php"><button>글쓰기</button></a>
     </div>
   </div>
-  <a href="../test1.php"><img src="../img/2Q.png"</a>
+  <a href="../test1.php"><img src="../img/2Q.png"></a>
 </body>
 </html>
 
