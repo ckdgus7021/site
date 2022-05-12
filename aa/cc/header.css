@@ -29,7 +29,7 @@ ul, li {list-style:none;}
     font-size: 30px;
     padding-left: 10%;
 }
-a {
+.side_menu {
     text-decoration: none;
     color:#fff;
     -webkit-tap-highlight-color : transparent;
