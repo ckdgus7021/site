@@ -196,7 +196,7 @@ if (mysqli_num_rows($result) > 0) {
 <label>
 </form>
 </td>
-          <td width="70%"><?php echo $board['id']?></td>
+          <td width="30%"><?php echo $board['id']?></td>
         </tr>
       </tbody>
       <?php } ?>

@@ -32,11 +32,11 @@
             {
               //title변수에 DB에서 가져온 title을 선택
               $title=$board["title"]; 
-              if(strlen($title)>15)
-              { 
+              //if(strlen($title)>30)
+              //{ 
                 //title이 30을 넘어서면 ...표시
-                $title=str_replace($board["title"],mb_substr($board["title"],0,15,"utf-8")."...",$board["title"]);
-              }
+                //$title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+              //}
         ?>
       <!--<tbody>
         <tr>
@@ -53,7 +53,7 @@
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
 <?php 
-echo '<span style="font-size: 16px;">' . $title . '</span><br><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;' . $board['date'] . '</span>';
+echo '<span class="title" style="font-size: 16px;">' . $title . '</span><br><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;' . $board['date'] . '</span>';
 ?>
 <input type="hidden" name="hit" value="1">
 <input type="submit" style="display: none;">

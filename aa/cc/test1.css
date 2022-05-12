@@ -120,6 +120,8 @@ a {
 
 .title {
 	text-overflow: ellipsis;
-	max-width: 100px;
+	max-width: 150px;
 	white-space: nowrap;
+	overflow: hidden;
+	display: block;
 }
