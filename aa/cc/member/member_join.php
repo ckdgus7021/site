@@ -13,7 +13,7 @@
     <section>
         <div>
             <div>
-                <form action="./member_insert.php" method="post" name="member_join">
+                <form action="/cc/member/member_insert.php" method="post" name="member_join">
                     <h2>회원 가입</h2>
 
                         <div style="margin-top: 10px">아이디</div>

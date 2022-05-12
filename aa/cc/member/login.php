@@ -17,7 +17,7 @@
             <div id="login_box">
                 <div id="login_title"><h2>로그인</h2></div>
                 <div id="login">
-                <form action="./login_insert.php" method="post">
+                <form action="/cc/member/login_insert.php" method="post">
                     <!--<ul style="list-style: none;">-->
                         <!--<li style="margin-bottom: 10px"><input type="text" name="id" placegolder="ID"></li>
                         <li style="margin-bottom: 10px"><input type="password" name="password" placegolder="password"></li>-->
