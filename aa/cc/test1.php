@@ -191,7 +191,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
         <tbody>
         <tr>
-          <td width="70%">
+          <td class="title" width="70%">
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
 <?php echo $title;?>

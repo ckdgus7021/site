@@ -116,3 +116,7 @@
 a {
 	-webkit-tap-highlight-color : transparent;
 }
+
+.title {
+	text-overflow: ellipsis;
+}
