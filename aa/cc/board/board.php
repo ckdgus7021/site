@@ -52,7 +52,7 @@
           <td width="30%">
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
-<?php echo $title . '<br>' . $board['id'] .?>
+<?php echo $title . '<br>' . $board["id"] .?>
 <input type="hidden" name="hit" value="1">
 <input type="submit" style="display: none;">
 <label>
