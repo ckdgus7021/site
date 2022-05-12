@@ -17,10 +17,10 @@
     <table class="list-table">
       <thead>
           <tr>
-              <th width="4%">번호</th>
+              <th width="7%">번호</th>
                 <th width="50%">제목</th>
-                <th width="10%">글쓴이</th>
-                <th width="10%">작성일</th>
+                <!--<th width="10%">글쓴이</th>
+                <th width="10%">작성일</th>-->
                 <th width="10%">조회수</th>
             </tr>
         </thead>
@@ -48,18 +48,20 @@
       </tbody>-->
       <tbody>
         <tr>
-          <td width="4%"><?php echo $board['num']; ?></td>
-          <td width="30%">
+          <td width="7%"><?php echo $board['num']; ?></td>
+          <td width="30%" style="text-align: left; padding-left: 5%;">
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
-<?php echo $title ?>
+<?php 
+echo '<span style="font-size: 16px;">' . $title . '</span><br><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;' . $board['date'] . '</span>';
+?>
 <input type="hidden" name="hit" value="1">
 <input type="submit" style="display: none;">
 <label>
 </form>
 </td>
-          <td width="10%"><?php echo $board['id']?></td>
-          <td width="10%"><?php echo $board['date']?></td>
+          <!--<td width="10%"><?php //echo $board['id']?></td>
+          <td width="10%"><?php //echo $board['date']?></td>-->
           <td width="10%"><?php echo $board['sum(hit)']?></td>
         </tr>
       </tbody>

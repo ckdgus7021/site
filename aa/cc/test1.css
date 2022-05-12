@@ -80,3 +80,35 @@
 	98% {left:100%;}
 	100% {left:0%;}
 }
+
+#left {
+	width: 35%;
+	height: 320px;
+	float: left;
+	overflow: scroll;
+	margin: 10px 5px 10px 10px;
+	border: solid 1px;
+	border-radius: 8px;
+	text-align: center;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#left::-webkit-scrollbar {
+    display: none;
+}
+
+#right {
+	width: 55%;
+	height: 320px;
+	float: left;
+	overflow: scroll;
+	margin: 10px 10px 10px 10px;
+	border: solid 1px;
+	border-radius: 8px;
+	text-align: center;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#right::-webkit-scrollbar {
+    display: none;
+}

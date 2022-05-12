@@ -50,7 +50,6 @@
         <title>test1</title>
 
         <link type="text/css" rel="stylesheet" href="./test1.css">
-        <link type="text/css" rel="stylesheet" href="./ttt.css">
         <link type="text/css" rel="stylesheet" href="./header.css">
 
     </head>
@@ -137,16 +136,16 @@
 
             </ul>
 <div>
-            <div style="width: 45%; height: 300px; float: left; overflow: scroll; margin: 10px 5px 10px 10px; border: solid 1px; border-radius: 8px;">
+            <div id="left">
             <?php
 
 echo "<style>tr { position: relative;} </style>";
 echo "<style>th { width: 150px; padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; }</style>";
 echo "<style>td { width: 150px; padding: 10px; text-align: center; vertical-align: top; border-bottom: 1px solid #ccc;}</style>";
 echo "<style> .abc { position: absolute; bottom:0;}</style>";
-echo "<table><tbody>";
 echo "<style>img.qwer { width: 50px; height: 50px;} </style>";
 echo "<style>input[type='text'] {width: 100px;} </style>";
+
 
 include 'dbconn.php';
 $sql = 
@@ -158,8 +157,8 @@ where rec.date=CURDATE() - INTERVAL 10 DAY group by menu.menu order by sum(recom
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
  while($row = mysqli_fetch_assoc($result)) {
-   echo "<table id='qq' class='ee'><tr>";
-   echo '<th>'. $row['menu']. '<br>'. '<img class=qwer src="'.$row['image'].'" >'. '<br>' . $row['price'] . '</th>';
+   echo '<table id="qq" class="ee"><tr>';
+   echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $row['restaurant'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
    echo "</tr></table>";
  }
  }else{
@@ -169,16 +168,16 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
             </div>
-            <div style="width: 45%; height: 300px; float: right; overflow: scroll; margin: 10px 10px 10px 5px; border: solid 1px; border-radius: 8px;">
+            <div id="right">
             <table class="list-table">
       <thead>
           <tr>
-                <th>제목</th>
-                <th>글쓴이</th>
+                <th style="width: 70%">제목</th>
+                <th style="width: 30%">작성자</th>
             </tr>
         </thead>
             <?php
-          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc limit 5";
+          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc limit 6";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -192,7 +191,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
         <tbody>
         <tr>
-          <td>
+          <td width="70%">
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
 <?php echo $title;?>
@@ -201,7 +200,7 @@ if (mysqli_num_rows($result) > 0) {
 <label>
 </form>
 </td>
-          <td><?php echo $board['id']?></td>
+          <td width="70%"><?php echo $board['id']?></td>
         </tr>
       </tbody>
       <?php } ?>

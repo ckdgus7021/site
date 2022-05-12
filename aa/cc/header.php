@@ -47,14 +47,14 @@
     </ul>
             
     <ul>
-        <li id="big1" class="big_menu"><a href="#">MENU1</a>
+        <li id="big1" class="big_menu"><a class="side_menu" href="#">MENU1</a>
             <ul id="small1" class="small_menu">
                 <li><a class="side_menu" href="./rest1.php">small menu1</a></li>
                 <li><a class="side_menu" href="./paging.php">small menu2</a></li>
                 <li><a class="side_menu" href="rest3">small menu3</a></li>
             </ul>
         </li>
-        <li id="big2" class="big_menu"><a href="#">MENU2</a>
+        <li id="big2" class="big_menu"><a class="side_menu" href="#">MENU2</a>
             <ul id="small2" class="small_menu">
                 <?php
                 include 'dbconn.php';
