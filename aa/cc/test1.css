@@ -112,3 +112,7 @@
 #right::-webkit-scrollbar {
     display: none;
 }
+
+a {
+	-webkit-tap-highlight-color : transparent;
+}
