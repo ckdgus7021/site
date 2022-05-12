@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CodePen - 테이블 페이징 처리하기</title>
   <link rel="stylesheet" href="./paging.css">
-
+  <?php include  "../../dbconn.php"; include "../../session_start.php" ?>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -22,63 +22,53 @@
 
 	<thead>
 		<tr>
-			<th>No</th>
-			<th>Category</th>
-			<th>Product</th>
+			<th>번호</th>
+			<th>제목</th>
+			<th>조회수</th>
 		</tr>
 	</thead>
-	<tbody>
-		<tr>
-			<td>1</td>
-			<td>Clothing</td>
-			<td>Jacket</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>life</td>
-			<td>dish</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Clothing</td>
-			<td>shocks</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Clothing</td>
-			<td>sports</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>shoes</td>
-			<td>nike</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>shoes</td>
-			<td>addidas</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Bags</td>
-			<td>backpack</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Clothing</td>
-			<td>Jacket</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>shoes</td>
-			<td>bonie</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Clothing</td>
-			<td>Jacket</td>
-		</tr>
-	</tbody>
+	<?php
+        
+          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc";
+          $result = mysqli_query($conn, $sql);
+            while($board = mysqli_fetch_array($result))
+            {
+              //title변수에 DB에서 가져온 title을 선택
+              $title=$board["title"]; 
+              //if(strlen($title)>30)
+              //{ 
+                //title이 30을 넘어서면 ...표시
+                //$title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+              //}
+        ?>
+      <!--<tbody>
+        <tr>
+          <td width="70"><?php //echo $board['num']; ?></td>
+          <td width="500"><a href="./board_read.php?num=<?php //echo $board["num"];?>"><?php //echo $title;?></a></td>
+          <td width="120"><?php //echo $board['id']?></td>
+          <td width="100"><?php //echo $board['date']?></td>
+        </tr>
+      </tbody>-->
+      <tbody>
+        <tr>
+          <td width="7%"><?php echo $board['num']; ?></td>
+          <td width="30%" style="text-align: left; padding-left: 5%;">
+<form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
+<label>
+<?php 
+echo '<span class="title" style="font-size: 16px;">' . $title . '</span><br><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;' . $board['date'] . '</span>';
+?>
+<input type="hidden" name="hit" value="1">
+<input type="submit" style="display: none;">
+<label>
+</form>
+</td>
+          <!--<td width="10%"><?php //echo $board['id']?></td>
+          <td width="10%"><?php //echo $board['date']?></td>-->
+          <td width="10%"><?php echo $board['sum(hit)']?></td>
+        </tr>
+      </tbody>
+      <?php } ?>
 
 </table>
 <!-- partial -->

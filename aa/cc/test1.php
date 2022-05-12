@@ -136,39 +136,33 @@
 
             </ul>
 <div>
-            <div id="left">
-            <?php
+    <div id="left">
+        <?php
+        echo "<style>tr { position: relative;} </style>";
+        echo "<style>th { width: 150px; padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; }</style>";
+        echo "<style>td { width: 150px; padding: 10px; text-align: center; vertical-align: top; border-bottom: 1px solid #ccc;}</style>";
+        echo "<style> .abc { position: absolute; bottom:0;}</style>";
+        echo "<style>img.qwer { width: 50px; height: 50px;} </style>";
+        echo "<style>input[type='text'] {width: 100px;} </style>";
+        include 'dbconn.php';
+        $sql = 
+        "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
+        from menu left join rec on menu.menu=rec.menu 
+        where rec.date=CURDATE() - INTERVAL 10 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
-echo "<style>tr { position: relative;} </style>";
-echo "<style>th { width: 150px; padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; }</style>";
-echo "<style>td { width: 150px; padding: 10px; text-align: center; vertical-align: top; border-bottom: 1px solid #ccc;}</style>";
-echo "<style> .abc { position: absolute; bottom:0;}</style>";
-echo "<style>img.qwer { width: 50px; height: 50px;} </style>";
-echo "<style>input[type='text'] {width: 100px;} </style>";
-
-
-include 'dbconn.php';
-$sql = 
-
-"SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
-from menu left join rec on menu.menu=rec.menu 
-where rec.date=CURDATE() - INTERVAL 10 DAY group by menu.menu order by sum(recommend) desc limit 10";
-
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
- while($row = mysqli_fetch_assoc($result)) {
-   echo '<table id="qq" class="ee"><tr>';
-   echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $row['restaurant'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
-   echo "</tr></table>";
- }
- }else{
- echo "메뉴 정보가 없습니다.";
- }
-
-
-?>
-            </div>
-            <div id="right">
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+        echo '<table id="qq" class="ee"><tr>';
+        echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $row['restaurant'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
+        echo "</tr></table>";
+        } 
+        }else{
+        echo "메뉴 정보가 없습니다.";
+        }
+        ?>
+    </div>
+    <div id="right">
             <table class="list-table">
       <thead>
           <tr>
@@ -201,7 +195,7 @@ if (mysqli_num_rows($result) > 0) {
       </tbody>
       <?php } ?>
     </table>
-            </div>
+    </div>
             
 </div>
 <div style="float: left; left: 30px;"><a href="#" class="openMask"><img src="./img/9kk.png" style="width: 50px; height: 50px;";></a></div>

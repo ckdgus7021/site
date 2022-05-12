@@ -45,7 +45,7 @@ include "../session_start.php";
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
-			<li><a href="/">[목록으로]</a></li>
+			<li><a href="/cc/board/board.php">[목록으로]</a></li>
 			<?php if ($userid==$board['id']) {?>
 			<li><a href="board_modify.php?num=<?php echo $board['num']; ?>">[수정]</a></li>
 			<li><a href="board_delete.php?num=<?php echo $board['num']; ?>">[삭제]</a></li>
