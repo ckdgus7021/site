@@ -5,7 +5,7 @@ include "../session_start.php";
 ?>
 <!doctype html>
 <head>
-<!--<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />-->
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 <meta charset="UTF-8">
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="./board_read.css" />
