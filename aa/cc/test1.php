@@ -183,15 +183,11 @@ if (mysqli_num_rows($result) > 0) {
             {
               //title변수에 DB에서 가져온 title을 선택
               $title=$board["title"]; 
-              if(strlen($title)>10)
-              { 
-                //title이 30을 넘어서면 ...표시
-                $title=str_replace($board["title"],mb_substr($board["title"],0,10,"utf-8")."...",$board["title"]);
-              }
+              
         ?>
         <tbody>
         <tr>
-          <td width="70%">
+          <td style="width: 70%; overflow: hidden;">
 <form action="/cc/board/board_read.php?num=<?php echo $board["num"];?>" method="post">
 <label>
 <?php echo $title;?>
