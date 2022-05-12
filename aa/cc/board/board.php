@@ -35,7 +35,7 @@
               if(strlen($title)>30)
               { 
                 //title이 30을 넘어서면 ...표시
-                $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+                $title=str_replace($board["title"],mb_substr($board["title"],0,15,"utf-8")."...",$board["title"]);
               }
         ?>
       <!--<tbody>
