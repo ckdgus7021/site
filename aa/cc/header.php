@@ -35,13 +35,13 @@
 
     <ul id="menu">
     <?php if(!$userid){  ?>
-        <li class="join"><a class="side_menu" href="./member/member_join.php">회원가입</a></li>
+        <li class="join"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
 
-        <li class="join"><a class="side_menu" href="./member/login.php">로그인</a></li>
+        <li class="join"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
     <?php }else{ ?>
-        <li class="join"><a class="side_menu" href="./member/logout.php">로그아웃</a></li>
+        <li class="join"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
 
-        <li class="join"><a class="side_menu" href="./member_modify_form.php">정보수정</a></li>
+        <li class="join"><a class="side_menu" href="/cc/member_modify_form.php">정보수정</a></li>
     <?php }?>
 
     </ul>
@@ -49,8 +49,8 @@
     <ul>
         <li id="big1" class="big_menu"><a class="side_menu" href="#">MENU1</a>
             <ul id="small1" class="small_menu">
-                <li><a class="side_menu" href="./rest1.php">small menu1</a></li>
-                <li><a class="side_menu" href="./paging.php">small menu2</a></li>
+                <li><a class="side_menu" href="/cc/rest1.php">small menu1</a></li>
+                <li><a class="side_menu" href="/cc/paging/paging.php">small menu2</a></li>
                 <li><a class="side_menu" href="rest3">small menu3</a></li>
             </ul>
         </li>
