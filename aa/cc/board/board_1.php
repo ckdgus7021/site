@@ -6,6 +6,15 @@
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="./board_1.css" />
 <link rel="stylesheet" type="text/css" href="../header.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //$('.hide_reply').hide();
+        $('.appear_reply').click(function(){
+            $(this).next().toggle(400);
+        });
+    });
+</script>
 </head>
 <header>
 	<?php include "../header.php"; ?>
@@ -25,8 +34,8 @@
         </thead>
         <?php
         
-          $sql = "SELECT board_1.num, title, board_1.id, board_1.date, board_1.time, reply_1.id, reply_1.reply, reply_1.date, reply_1.time
-          from board_1 left join reply_1 on board_1.num=reply_1.num order by board_1.num desc";
+          $sql = "SELECT board_1.*, reply_1.*
+          from board_1 left join reply_1 on board_1.num=reply_1.bo_num group by board_1.num order by board_1.num desc";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -47,7 +56,7 @@
         </tr>
       </tbody>-->
       <tbody>
-        <tr>
+        <tr class="appear_reply">
             <td width="7%"><?php echo $board['num']; ?></td>
             <td width="30%" style="text-align: left; padding-left: 5%;">
             <?php 
@@ -67,6 +76,39 @@
           <!--<td width="10%"><?php //echo $board['id']?></td>
           <td width="10%"><?php //echo $board['date']?></td>-->
         </tr>
+        <tr class="hide_reply">
+            <td></td>
+            <td>
+            <div class="dap_lo">
+			<div><b><?php echo $board['re_id'];?></b></div>
+			<div class="dap_to comt_edit"><?php echo nl2br("$board[reply]"); ?></div>
+			<div class="rep_me dap_to">
+				<?php if ($board['re_date']==date('Y-m-d')) {
+				echo $board['re_time'];}
+				else{
+					echo $board['re_date'];
+				}
+				?><div class="rep_me rep_menu">
+				<a class="dat_edit_bt" href="#"><input type="button" value="수정"></a>
+				<a class="dat_delete_bt" href="#"><input type="button" value="삭제"></a>
+			</div></div>
+				
+				</div>
+            </td>
+        </tr>
+        <tr class="hide_reply">
+            <td></td>
+            <td>
+        <div class="dap_ins">
+		<form action="reply_1_insert.php?num=<?php echo $board['num']; ?>" method="post">
+			<input type="hidden" name="id" value="<?php $userid ?>">
+			<div style="margin-top:10px; ">
+				<textarea name="reply" class="reply_content" id="re_content" ></textarea>
+				<button id="rep_bt" class="re_bt">댓글</button>
+			</div>
+		</form>
+	</div>
+            </td></tr>
       </tbody>
       <?php } ?>
     </table>
