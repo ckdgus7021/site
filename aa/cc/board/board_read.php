@@ -2,6 +2,7 @@
 date_default_timezone_set('Asia/Seoul');
 include "../dbconn.php";
 include "../session_start.php";
+$date = date('Y-m-d');
 ?>
 <!doctype html>
 <head>
@@ -10,6 +11,7 @@ include "../session_start.php";
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="./board_read.css" />
 <link rel="stylesheet" type="text/css" href="../header.css" />
+<link rel="stylesheet" type="text/css" href="./reply.css" />
 </head>
 <header>
 	<?php include "../header.php"; ?>
@@ -17,18 +19,9 @@ include "../session_start.php";
 <body>
 	<?php
 		$bno = $_GET['num'];
-		$hit = $_POST['hit'];
-		$sql= "SELECT * FROM hit WHERE id='$userid' and num='$bno'";
-    	$result=mysqli_query($conn, $sql);
-    	$rowNum= mysqli_num_rows($result);
-
-		if($rowNum){
-		}
-		else{
-		$sql= "INSERT INTO hit(num, id, hit) VALUES('$bno', '$userid','$hit')";
-    	mysqli_query($conn,$sql);
-		}
-		$sql = "SELECT board.num, board.title, board.content, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num where board.num='$bno'";
+    	$hit = "UPDATE board set hit = hit + 1 where num='$bno'";
+		$hit_result = mysqli_query($conn, $hit);
+		$sql = "SELECT * from board where num='$bno'";
         $result = mysqli_query($conn, $sql);
         $board = mysqli_fetch_array($result);
 	?>
@@ -36,7 +29,13 @@ include "../session_start.php";
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
 		<div id="user_info">
-			<?php echo $board['id']; ?> <?php echo $board['date']; ?> 조회:<?php echo $board['sum(hit)']; ?>
+			<?php echo $board['id']; ?>
+			<?php if ($board['date']==date('Y-m-d')) { 
+				echo $board['time'];
+			}else{
+				echo $board['date'];
+				}?> 
+			조회:<?php echo $board['hit']; ?>
 				<div id="bo_line"></div>
 			</div>
 			<div id="bo_content">
@@ -53,5 +52,54 @@ include "../session_start.php";
 		</ul>
 	</div>
 </div>
+
+<div class="reply_view">
+	<h3>댓글목록</h3>
+		<?php
+			$sql = "SELECT * from reply where num='".$bno."' order by re_num asc";
+			$result = mysqli_query($conn, $sql);
+            while($reply = mysqli_fetch_array($result)){ 
+		?>
+		<div class="dap_lo">
+			<div><b><?php echo $reply['id'];?></b></div>
+			<div class="dap_to comt_edit"><?php echo nl2br("$reply[reply]"); ?></div>
+			<div class="rep_me dap_to">
+				<?php if ($reply['date']==date('Y-m-d')) {
+				echo $reply['time'];}
+				else{
+					echo $reply['date'];
+				}
+				?><div class="rep_me rep_menu">
+				<a class="dat_edit_bt" href="#"><input type="button" value="수정"></a>
+				<a class="dat_delete_bt" href="#"><input type="button" value="삭제"></a>
+			</div></div>
+				
+				</div>
+			
+			<!-- 댓글 수정 폼 dialog -->
+			<div class="dat_edit">
+				<form method="post" action="rep_modify.php">
+					<input type="hidden" name="re_num" value="<?php echo $reply['re_num']; ?>" /><input type="hidden" name="num" value="<?php echo $bno; ?>">
+					<textarea name="reply" class="dap_edit_t"><?php echo $reply['reply']; ?></textarea>
+					<input type="submit" value="수정하기" class="re_mo_bt">
+				</form>
+			</div>
+		</div>
+	<?php } ?>
+
+	<!--- 댓글 입력 폼 -->
+	<div class="dap_ins">
+		<form action="reply_insert.php?num=<?php echo $bno; ?>" method="post">
+			<input type="hidden" name="id" value="<?php $userid ?>">
+			<div style="margin-top:10px; ">
+				<textarea name="reply" class="reply_content" id="re_content" ></textarea>
+				<button id="rep_bt" class="re_bt">댓글</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="foot_box"></div>
+</div>
+
 </body>
 </html>

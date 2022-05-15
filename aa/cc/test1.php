@@ -163,6 +163,10 @@
         ?>
     </div>
     <div id="right">
+        <div style="border-bottom: solid 1px; margin: 1px 4px 1px 4px; padding: 4px 0px 4px 0px;">
+        <h4 style="float: left; margin: 1px 4px 1px 10px; padding: 4px 0px 4px 0px;">자유 게시판</h4>
+        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 26%;">더보기 +</a>
+        </div>
             <table class="list-table">
       <thead>
           <tr>
@@ -171,7 +175,7 @@
             </tr>
         </thead>
             <?php
-          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc limit 6";
+          $sql = "SELECT * from board order by num desc limit 5";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -200,7 +204,10 @@
 </div>
 <div style="float: left; left: 30px;"><a href="#" class="openMask"><img src="./img/9kk.png" style="width: 50px; height: 50px;";></a></div>
 <?php include "./random_rec.php" ?>
-<div><a href="./board/board.php"><img src="./img/9k.png" style="width: 50px; height: 50px;"></div>
+<div>
+    <a href="./board/board.php"><img src="./img/9k.png" style="width: 50px; height: 50px;"></a>
+    <a href="./board/board_1.php"><img src="./img/2Q.png" style="width: 50px; height: 50px;"></a>
+</div>
 
         </div>
 
