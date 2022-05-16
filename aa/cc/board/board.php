@@ -25,8 +25,30 @@
             </tr>
         </thead>
         <?php
+
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+      }else{
+        $page = 1;
+      }
+        $sql1 = "select * from board";
+        $result1=mysqli_query($conn, $sql1);
+        $row_num = mysqli_num_rows($result1);
+        $list = 5;
+        $block_ct = 5;
+
+        $block_num = ceil($page/$block_ct);
+        $block_start = (($block_num - 1) * $block_ct) + 1;
+        $block_end = $block_start + $block_ct - 1;
+
+        $total_page = ceil($row_num / $list);
+        if($block_end > $total_page) $block_end = $total_page;
+        $total_block = ceil($total_page/$block_ct);
+        $start_num = ($page-1) * $list;
+
+        //
         
-          $sql = "SELECT * from board order by num desc";
+          $sql = "SELECT * from board order by num desc limit $start_num, $list";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -66,11 +88,52 @@ if ($board['date']==date('Y-m-d')) {
       </tbody>
       <?php } ?>
     </table>
+    
+    
+
+    <div id="page_num">
+      <ul>
+        <?php
+          if($page <= 1)
+          {
+            echo "<li class='paging' id='fo_re'>처음</li>"; 
+          }else{
+            echo "<li class='paging'><a href='?page=1'>처음</a></li>";
+          }
+          if($page <= 1)
+          {
+            
+          }else{
+          $pre = $page-1;
+            echo "<li class='paging'><a href='?page=$pre'>이전</a></li>";
+          }
+          for($i=$block_start; $i<=$block_end; $i++){ 
+            
+            if($page == $i){
+              echo "<li class='paging' id='fo_re'>$i</li>";
+            }else{
+              echo "<li class='paging'><a href='?page=$i'>$i</a></li>";
+            }
+          }
+          if($page >= $total_page){
+          }else{
+            $next = $page + 1;
+            echo "<li class='paging'><a href='?page=$next'>다음</a></li>";
+          }
+          if($page >= $total_page){
+            echo "<li class='paging' id='fo_re'>마지막</li>";
+          }else{
+            echo "<li class='paging'><a href='?page=$total_page'>마지막</a></li>";
+          }
+        ?>
+      </ul>
+    </div>
+
+
     <div id="write_btn">
       <a href="./board_write.php"><button>글쓰기</button></a>
     </div>
   </div>
-  <a href="../test1.php"><img src="../img/2Q.png"></a>
 </body>
 </html>
 

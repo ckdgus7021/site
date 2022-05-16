@@ -5,13 +5,9 @@
 <script>
     $(document).ready(function(){
         $('.small_menu').hide();
-        $('#big1').click(function(){
-            $('#small1').toggle(400);
+        $('.big_menu').click(function(){
+            $(this).children('.small_menu').toggle(400);
         });
-        $('#big2').click(function(){
-            $('#small2').toggle(400);
-        });
-        
     });
 </script>
 

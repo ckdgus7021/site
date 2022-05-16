@@ -8,7 +8,7 @@
     $date = date('Y-m-d');
     $time = date('H:i:s');
     
-    if($bno && $_POST['reply']){
+    if($bno && $_POST['reply'] && $userid){
         $sql = "insert into reply (id, reply, num, date, time) values('$userid', '$reply', '$bno', '$date', '$time')";
         mysqli_query($conn,$sql);
         mysqli_close($conn);

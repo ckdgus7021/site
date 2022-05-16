@@ -29,7 +29,7 @@
 	</thead>
 	<?php
         
-          $sql = "SELECT board.num, board.title, board.id, board.date, sum(hit) from board left join hit on board.num=hit.num group by board.num order by board.num desc";
+          $sql = "SELECT * from board order by num desc";
           $result = mysqli_query($conn, $sql);
             while($board = mysqli_fetch_array($result))
             {
@@ -65,7 +65,7 @@ echo '<span class="title" style="font-size: 16px;">' . $title . '</span><br><spa
 </td>
           <!--<td width="10%"><?php //echo $board['id']?></td>
           <td width="10%"><?php //echo $board['date']?></td>-->
-          <td width="10%"><?php echo $board['sum(hit)']?></td>
+          <td width="10%"><?php echo $board['hit']?></td>
         </tr>
       </tbody>
       <?php } ?>

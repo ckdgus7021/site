@@ -57,3 +57,37 @@ ul li {
 	display: block;
 	font-size: 16px;
 }
+
+/*paging*/
+#page_num {
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	margin-top:30px;
+}
+#page_num ul {
+	display: table;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#page_num ul li {
+	float: left;
+	margin-left: 10px; 
+	text-align: center;
+}
+
+.paging {
+	display: inline-block;
+	padding: 3px 5px;
+	margin-right: 10px;
+	font-family:Tahoma;
+	background: #ccc;
+	color: #000;
+	text-decoration: none;
+}
+#fo_re {
+	background: #333;
+	color: #fff;
+}
+/*paging*/
