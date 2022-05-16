@@ -34,7 +34,7 @@ if(isset($_GET['page'])){
         $sql1 = "select * from board";
         $result1=mysqli_query($conn, $sql1);
         $row_num = mysqli_num_rows($result1);
-        $list = 5;
+        $list = 10;
         $block_ct = 5;
 
         $block_num = ceil($page/$block_ct);
