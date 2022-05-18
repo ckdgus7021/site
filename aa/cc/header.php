@@ -31,16 +31,19 @@
 
     <ul id="menu">
     <?php if(!$userid){  ?>
-        <li class="join"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
+        <li class="join" style="font-size: 20px; float: left;"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
 
-        <li class="join"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
+        <li class="join" style="font-size: 20px; float: left;"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
+        <li style="border-bottom: solid 1px; color: white;">&nbsp;</li>
     <?php }else{ ?>
         <li class="join"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
 
         <li class="join"><a class="side_menu" href="/cc/member_modify_form.php">정보수정</a></li>
+        <li style="border-bottom: solid 1px; color: white;">&nbsp;</li>
     <?php }?>
 
     </ul>
+    
             
     <ul>
         <li id="big1" class="big_menu"><a class="side_menu" href="#">MENU1</a>

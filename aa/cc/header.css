@@ -26,8 +26,9 @@ ul, li {list-style:none;}
 }
 
 #menu > .join {
-    font-size: 30px;
+    font-size: 15px;
     padding-left: 10%;
+    float:left;
 }
 .side_menu {
     text-decoration: none;
