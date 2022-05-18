@@ -1,6 +1,6 @@
 input[type="checkbox"] {display: none;}
 
-[id="menuicon"] + label span {display:block;position:absolute;width:50%;height:5px;border-radius:30px;background:#000;transition:all .35s;}
+
 [id="menuicon"] + label span:nth-child(1) {top:0;}
 [id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);}
 [id="menuicon"] + label span:nth-child(3) {bottom:0;}
