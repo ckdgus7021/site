@@ -1,6 +1,5 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link type="text/css" rel="stylesheet" href="./header.css">
 </head>
 
 <script>
