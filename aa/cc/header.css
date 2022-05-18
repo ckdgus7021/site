@@ -1,5 +1,5 @@
 input[type="checkbox"] {display: none;}
-
+[id="menuicon"] + label {display:block;margin:30px;width:60px;height:50px;position:relative;cursor:pointer;}
 
 [id="menuicon"] + label span:nth-child(1) {top:0;}
 [id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);}
