@@ -6,14 +6,27 @@
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="./board.css" />
 <link rel="stylesheet" type="text/css" href="../header.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <header>
 	<?php include "../header.php"; ?>
 </header>
 <body>
+<style>
+  * {
+    font-family: 'Dongle'!important;
+    font-size: 20px;
+  }
+  .title {
+    font-size: 30px;
+  }
+</style>
 <div id="board_area"> 
-  <h1>자유게시판</h1>
-  <h4>자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
+  <span style="font-size: 80px;">여기 모여라!</span>
     <table class="list-table">
       <thead>
           <tr>

@@ -52,6 +52,12 @@
         <link type="text/css" rel="stylesheet" href="./test1.css">
         <link type="text/css" rel="stylesheet" href="./header.css">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+
     </head>
 
 
@@ -60,6 +66,8 @@
 <?php include "./header.php" ?>
 </header>
     <body>
+
+    
 
 
 
@@ -163,8 +171,8 @@
         ?>
     </div>
     <div id="right">
-        <div style="border-bottom: solid 1px; margin: 1px 4px 1px 4px; padding: 4px 0px 4px 0px;">
-        <h4 style="float: left; margin: 1px 4px 1px 10px; padding: 4px 0px 4px 0px;">자유 게시판</h4>
+        <div style="border-bottom: solid 1px; margin: 1px 4px 1px 4px; padding: 4px 0px 13px 0px;">
+        <h4 style="float: left; margin: 1px 4px 1px 10px; padding: 4px 0px 4px 0px;">여기 모여라!</h4>
         <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 26%;">더보기 +</a>
         </div>
             <table class="list-table">
