@@ -69,7 +69,7 @@ $date = date('Y-m-d');
 				else{
 					echo $reply['date'];
 				}
-				?><div class="rep_me rep_menu" style="width: 15%;">
+				?><div class="rep_me rep_menu" style="width: 20%;">
 				<a class="dat_edit_bt" href="#"><input type="button" value="수정" style="float: left;margin-right: 5px;"></a>
 				<form action="./reply_delete.php" name="reply" method="POST">
 				<input type="hidden" name="num" value="<?php echo $bno; ?>">
