@@ -16,14 +16,14 @@
 	<?php include "../header.php"; ?>
 </header>
 <body>
-<style>
+<!--<style>
   * {
     font-family: 'Dongle'!important;
     font-size: 20px;
   }
   .title {
     font-size: 30px;
-  }
+  }-->
 </style>
 <div id="board_area"> 
   <span style="font-size: 80px;">여기 모여라!</span>
