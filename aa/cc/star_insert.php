@@ -1,16 +1,25 @@
+<DOCTYPE! HTML>
+    <html>
+<head>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta charset="UTF-8">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
 <?php
-    include "./session_start.php"
+    include "./session_start.php";
 
     $restaurant=$_POST['restaurant'];
     $star=$_POST['star'];
 
     if (!$userid){
-        echo("
+        echo('
         <script>
-        alert('로그인 후 이용해주세요.');
-        history.back();
+        swal("","로그인 후 이용해주세요.", "warning")
+        .then(() => {
+        window.history.back();
+        });
         </script>
-        ");
+        ');
         exit;
     }
 
@@ -46,3 +55,4 @@
         ";
     }
 ?>
+</html>

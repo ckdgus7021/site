@@ -38,7 +38,7 @@ echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
 
 <form name="myform" id="myform" method="post" action="./star_insert.php">
     <fieldset class="other">
-    <input type="text" name="restaurant" value="rest1" style="display: none;">
+    <input type="text" name="restaurant" value="<?php echo $row['restaurant'] ?>" style="display: none;">
         <input type="radio" name="star" value="5" id="rate1"><label for="rate1">⭐</label>
         <input type="radio" name="star" value="4" id="rate2"><label for="rate2">⭐</label>
         <input type="radio" name="star" value="3" id="rate3"><label for="rate3">⭐</label>
