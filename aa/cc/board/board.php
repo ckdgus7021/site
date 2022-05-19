@@ -26,7 +26,7 @@
   }-->
 </style>
 <div id="board_area"> 
-  <span style="font-size: 80px;">여기 모여라!</span>
+  <h1>여기 모여라!</h1>
     <table class="list-table">
       <thead>
           <tr>
