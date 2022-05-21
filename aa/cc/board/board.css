@@ -4,7 +4,11 @@
 * {
 	margin: 0 auto;
 	padding: 0;
-	font-family: 'Malgun gothic','Sans-Serif','Arial';
+	font-family: 'Dongle'!important;
+	font-size: 20px;
+}
+.board_title {
+	font-size: 80px
 }
 a {
 	text-decoration: none;
@@ -28,7 +32,7 @@ ul li {
 	position: relative;
 }
 .list-table {
-	margin-top: 40px;
+	margin-top: 0px;
 }
 .list-table thead th{
 	height:40px;
@@ -55,7 +59,7 @@ ul li {
 	white-space: nowrap;
 	overflow: hidden;
 	display: block;
-	font-size: 16px;
+	font-size: 30px;
 }
 
 /*paging*/

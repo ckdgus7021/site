@@ -4,8 +4,7 @@
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 <meta charset="UTF-8">
 <title>게시판</title>
-<link rel="stylesheet" type="text/css" href="./board.css" />
-<link rel="stylesheet" type="text/css" href="../header.css" />
+<link rel="stylesheet" type="text/css" href="./board.css?after" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,17 +15,8 @@
 	<?php include "../header.php"; ?>
 </header>
 <body>
-<!--<style>
-  * {
-    font-family: 'Dongle'!important;
-    font-size: 20px;
-  }
-  .title {
-    font-size: 30px;
-  }-->
-</style>
 <div id="board_area"> 
-  <h1>여기 모여라!</h1>
+  <span class="board_title">여기 모여라!</span>
     <table class="list-table">
       <thead>
           <tr>
@@ -131,7 +121,7 @@ if ($board['date']==date('Y-m-d')) {
           if($page >= $total_page){
           }else{
             $next = $page + 1;
-            echo "<li class='paging'><a href='?page=$next'>다음</a></li>";
+              echo "<li class='paging'><a href='?page=$next'>다음</a></li>";
           }
           if($page >= $total_page){
             echo "<li class='paging' id='fo_re'>마지막</li>";

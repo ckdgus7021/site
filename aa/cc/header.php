@@ -1,4 +1,5 @@
 <head>
+<link type="text/css" rel="stylesheet" href="/cc/header.css?after">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,15 +38,14 @@
 
     <ul id="menu" style="text-align: center;">
     <?php if(!$userid){  ?>
-        <li class="join" style="font-size: 20px; float: left;"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
+        <li class="join"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
 
-        <li class="join" style="font-size: 20px; float: left;"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
-        <li style="border-bottom: solid 1px; color: white; margin-bottom: 20px; margin-left: 7%; width: 85%;">&nbsp;</li>
+        <li class="join2"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
+        <li class="join_line"></li>
     <?php }else{ ?>
         <li class="join"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
 
-        <li class="join"><a class="side_menu" href="/cc/member_modify_form.php">정보수정</a></li>
-        <li style="border-bottom: solid 1px; color: white;">&nbsp;</li>
+        <li class="join_line">&nbsp;</li>
     <?php }?>
 
     </ul>

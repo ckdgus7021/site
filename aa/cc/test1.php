@@ -49,8 +49,8 @@
 
         <title>test1</title>
 
-        <link type="text/css" rel="stylesheet" href="./test1.css">
-        <link type="text/css" rel="stylesheet" href="./header.css">
+        <link type="text/css" rel="stylesheet" href="./test1.css?after">
+        
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,7 +156,7 @@
         $sql = 
         "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
         from menu left join rec on menu.menu=rec.menu 
-        where rec.date=CURDATE() - INTERVAL 10 DAY group by menu.menu order by sum(recommend) desc limit 10";
+        where rec.date=CURDATE() - INTERVAL 19 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
@@ -171,15 +171,15 @@
         ?>
     </div>
     <div id="right">
-        <div style="border-bottom: solid 1px; margin: 1px 4px 1px 4px; padding: 4px 0px 13px 0px;">
-        <h4 style="float: left; margin: 1px 4px 1px 10px; padding: 4px 0px 4px 0px;">여기 모여라!</h4>
+        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 13px 0px;">
+        <h4 class="board_title">여기 모여라!</h4>
         <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 24%;">더보기 +</a>
         </div>
             <table class="list-table">
       <thead>
           <tr>
-                <th style="width: 70%">제목</th>
-                <th style="width: 30%">작성자</th>
+                <th class="board_top" style="width: 70%">제목</th>
+                <th class="board_top2" style="width: 30%">작성자</th>
             </tr>
         </thead>
             <?php
