@@ -20,11 +20,11 @@
     <table class="list-table">
       <thead>
           <tr>
-              <th width="7%">번호</th>
-                <th width="50%">제목</th>
+              <th>번호</th>
+                <th width="89.8%">제목</th>
                 <!--<th width="10%">글쓴이</th>
                 <th width="10%">작성일</th>-->
-                <th width="10%">조회수</th>
+                <th>조회수</th>
             </tr>
         </thead>
         <?php
@@ -37,7 +37,7 @@ if(isset($_GET['page'])){
         $sql1 = "select * from board";
         $result1=mysqli_query($conn, $sql1);
         $row_num = mysqli_num_rows($result1);
-        $list = 5;
+        $list = 8;
         $block_ct = 5;
 
         $block_num = ceil($page/$block_ct);
@@ -73,10 +73,10 @@ if(isset($_GET['page'])){
       </tbody>-->
       <tbody>
         <tr>
-          <td width="7%"><?php echo $board['num']; ?></td>
-          <td width="30%" style="text-align: left; padding-left: 5%;">
+          <td><?php echo $board['num']; ?></td>
+          <td width="87%" style="text-align: left; padding-left: 5%;">
 <?php 
-echo '<a href="/cc/board/board_read.php?num=' . $board["num"] . '"><span class="title">' . $title . '</span></a><br><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;';
+echo '<a href="/cc/board/board_read.php?num=' . $board["num"] . '"><span class="title">' . $title . '</span></a><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;';
 if ($board['date']==date('Y-m-d')) {
   echo $board['time'];}
   else{
@@ -86,7 +86,7 @@ if ($board['date']==date('Y-m-d')) {
 </td> 
           <!--<td width="10%"><?php //echo $board['id']?></td>
           <td width="10%"><?php //echo $board['date']?></td>-->
-          <td width="10%"><?php echo $board['hit']?></td>
+          <td><?php echo $board['hit']?></td>
         </tr>
       </tbody>
       <?php } ?>
@@ -113,9 +113,9 @@ if ($board['date']==date('Y-m-d')) {
           for($i=$block_start; $i<=$block_end; $i++){ 
             
             if($page == $i){
-              echo "<li class='paging' id='fo_re'>$i</li>";
+              echo "<li class='paging_number' id='fo_re'>$i</li>";
             }else{
-              echo "<li class='paging'><a href='?page=$i'>$i</a></li>";
+              echo "<li class='paging_number'><a href='?page=$i'>$i</a></li>";
             }
           }
           if($page >= $total_page){

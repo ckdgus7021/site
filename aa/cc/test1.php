@@ -171,15 +171,15 @@
         ?>
     </div>
     <div id="right">
-        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 13px 0px;">
+        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 6px 0px;">
         <h4 class="board_title">여기 모여라!</h4>
-        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 24%;">더보기 +</a>
+        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 24%; font-size:20px; padding: 0;">더보기 +</a>
         </div>
             <table class="list-table">
       <thead>
           <tr>
-                <th class="board_top" style="width: 70%">제목</th>
-                <th class="board_top2" style="width: 30%">작성자</th>
+                <th class="board_top">제목</th>
+                <th class="board_top2">작성자</th>
             </tr>
         </thead>
             <?php

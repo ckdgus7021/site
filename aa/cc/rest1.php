@@ -6,7 +6,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link type="text/css" rel="stylesheet" href="./radio.css">
-    <link type="text/css" rel="stylesheet" href="./test1.css">
     <link type="text/css" rel="stylesheet" href="./header.css">
     <link type="text/css" rel="stylesheet" href="./memo.css">
     </head>
@@ -75,8 +74,6 @@ echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
    //echo "<style> .ee {display: none;}</style>";
    //echo "<style> span:hover + table.ee {display: inline-block;}</style>";
   
-
-   echo '<span id="ww"><img src="./img/2Q.png"></span>';
    if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
      echo "<table id='qq' class='ee'><tr>";
@@ -85,7 +82,7 @@ echo "<span class='other'> 평점 : </span>" . $row['round(avg(star),2)'];
      <form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=hidden name="restaurant" value="' . $row['restaurant'] . '">
      <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
      <label><input type=submit value=추천 style="display: none;"><i class="fa-solid fa-thumbs-up" style="border: 2px solid #2199e8;
-     padding: 3px; color: #2199e8; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form><br>';
+     padding: 3px; color: #2199e8; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form>';
      echo "</tr></table>";
    }
    }else{

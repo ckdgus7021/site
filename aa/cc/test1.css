@@ -83,12 +83,12 @@
 
 #left {
 	width: 35%;
-	height: 310px;
+	height: 315px;
 	float: left;
 	overflow: scroll;
 	margin: 10px 5px 10px 10px;
 	border: solid 1px;
-	border-radius: 2px;
+	border-radius: 4px;
 	text-align: center;
 	-ms-overflow-style: none;
     scrollbar-width: none;
@@ -99,12 +99,12 @@
 
 #right {
 	width: 55%;
-	height: 310px;
+	height: 315px;
 	float: left;
 	overflow: scroll;
 	margin: 10px 10px 10px 10px;
 	border: solid 1px;
-	border-radius: 2px;
+	border-radius: 4px;
 	text-align: center;
 	-ms-overflow-style: none;
     scrollbar-width: none;
