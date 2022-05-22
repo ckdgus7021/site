@@ -147,3 +147,7 @@ a {
 	margin: 0;
 	padding: 0;
 }
+
+.list-table tbody td{
+	padding:0px;
+}

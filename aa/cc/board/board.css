@@ -79,6 +79,9 @@ ul li {
 	margin-left: 10px; 
 	text-align: center;
 }
+#page_num ul li a {
+-webkit-tap-highlight-color : transparent;
+}
 
 
 .paging {
