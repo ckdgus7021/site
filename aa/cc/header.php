@@ -24,11 +24,11 @@
 
     <label for="menuicon">
 
-        <span style="background: #fff;"></span>
+        <span></span>
 
-        <span style="background: #fff;"></span>
+        <span></span>
 
-        <span style="background: #fff;"></span>
+        <span></span>
 
     </label>
 
