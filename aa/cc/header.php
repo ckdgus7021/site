@@ -76,7 +76,7 @@
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                echo '<li style="margin-top:5px;"><a class="side_menu" href="' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                echo '<li style="margin-top:5px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
                 }
             }   else{
                     echo "정보가 없습니다.";
