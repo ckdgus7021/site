@@ -57,6 +57,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 
     </head>
 
@@ -67,7 +70,31 @@
 </header>
     <body>
 
-    
+    <style>
+
+.top_nav{
+    margin-top: 15px;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.nav {
+    float: left;
+    width: 33.33333%;
+    height: 60px;
+    vertical-align: center;
+}
+
+* {
+	font-family: 'Gowun Batang', serif !important;
+}
+
+</style>
+
+
+
 
 
 
@@ -143,6 +170,26 @@
                 </li>
 
             </ul>
+<div class="top_nav">
+<div class="nav" style="border: solid 1px;">
+    한식<br><img src="./img/gkstlr.png" style="width: 25px; height: 25px;">
+</div>
+<div class="nav" style="border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px;">
+    중식<br><img src="./img/wndtlr.png" style="width: 25px; height: 25px;">
+</div>
+<div class="nav" style="border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px;">
+    일식<br><img src="./img/dlftlr.png" style="width: 25px; height: 25px;">
+</div>
+<div class="nav" style="border: solid 1px; border-top: 0;">
+    양식<br><img src="./img/didtlr.png" style="width: 25px; height: 25px;">
+</div>
+<div class="nav" style="border-right: solid 1px; border-bottom: solid 1px;">
+    기타<br><img src="./img/dot.png" style="width: 25px; height: 20px;">
+</div>
+<div class="nav" style="border-right: solid 1px; border-bottom: solid 1px;">
+    기타<br><img src="./img/dot.png" style="width: 25px; height: 20px;">
+</div>
+</div>
 <div>
     <div id="left">
         <?php
@@ -156,7 +203,7 @@
         $sql = 
         "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
         from menu left join rec on menu.menu=rec.menu 
-        where rec.date=CURDATE() - INTERVAL 19 DAY group by menu.menu order by sum(recommend) desc limit 10";
+        where rec.date=CURDATE() - INTERVAL 24 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
@@ -171,15 +218,15 @@
         ?>
     </div>
     <div id="right">
-        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 6px 0px;">
-        <h4 class="board_title">여기 모여라!</h4>
-        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 24%; font-size:20px; padding: 0;">더보기 +</a>
+        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 10px 0px;">
+        <span class="board_title" style="font-size: 22px;">여기 모여라!</span>
+        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 18%; font-size:15px; padding: 0;">더보기 +</a>
         </div>
             <table class="list-table">
       <thead>
           <tr>
-                <th class="board_top">제목</th>
-                <th class="board_top2">작성자</th>
+                <td class="board_top" style="font-size: 17px;">제목</td>
+                <td class="board_top2" style="font-size: 17px;">작성자</td>
             </tr>
         </thead>
             <?php
