@@ -1,6 +1,6 @@
 input[type="checkbox"] {display: none;}
-[id="menuicon"] + label {display:block;margin:30px;width:40px;height:34px;position:relative;cursor:pointer;}
-[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:5px;border-radius:30px;background:#000;transition:all .35s;}
+[id="menuicon"] + label {display:block;margin:30px 30px 30px 25px;width:31px;height:25px;position:relative;cursor:pointer;}
+[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:3px;border-radius:30px;background:#fff;transition:all .35s;}
 [id="menuicon"] + label span:nth-child(1) {top:0;}
 [id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);}
 [id="menuicon"] + label span:nth-child(3) {bottom:0;}
@@ -36,6 +36,12 @@ ul, li {list-style:none;}
     font-family: 'Dongle'!important;
     font-size: 35px;
     padding-left: 10%;
+}
+
+#menu > .join3 {
+    font-family: 'Dongle'!important;
+    font-size: 35px;
+    text-align: center;
 }
 
 .join_line {

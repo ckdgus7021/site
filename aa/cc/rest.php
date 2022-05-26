@@ -24,7 +24,7 @@ include "./session_start.php"
     <?php
 include 'dbconn.php';
 $rest=$_GET['rest'];
-$sql = "SELECT round(avg(star),2), restaurant FROM star where restaurant='$rest'";
+$sql = "SELECT round(avg(star),2), restaurant.restaurant FROM restaurant left join star on restaurant.restaurant=star.restaurant where restaurant.restaurant='$rest'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 echo '<h1 class="other">' . $row['restaurant'] . '</h1>';

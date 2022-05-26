@@ -19,16 +19,16 @@
 
 
 
-<a href="/cc/test1.php"><img src="/cc/img/22-removebg-preview.png" style="height: 100px; width: 200px; position: absolute; margin-left: 140px; margin-top:0; top: 0;"></a>
+<a href="/cc/test1.php"><img src="/cc/img/bbbb.png" style="height: 85px; width: 100%; position: absolute; padding-left: 5px; top: 0; background-color: #b7eff8;"></a>
 <input type="checkbox" id="menuicon">
 
     <label for="menuicon">
 
-        <span></span>
+        <span style="background: #fff;"></span>
 
-        <span></span>
+        <span style="background: #fff;"></span>
 
-        <span></span>
+        <span style="background: #fff;"></span>
 
     </label>
 
@@ -43,9 +43,10 @@
         <li class="join2"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
         <li class="join_line"></li>
     <?php }else{ ?>
-        <li class="join"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
+        
+        <li class="join3"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
 
-        <li class="join_line">&nbsp;</li>
+        <li class="join_line"></li>
     <?php }?>
 
     </ul>
@@ -88,7 +89,7 @@
             <ul id="small1" class="small_menu">
                 <li><a class="side_menu" href="/cc/rest1.php">small menu1</a></li>
                 <li><a class="side_menu" href="/cc/paging/paging.php">small menu2</a></li>
-                <li><a class="side_menu" href="rest3">small menu3</a></li>
+                <li><a class="side_menu" href="/cc/total.php">small menu3</a></li>
             </ul>
         </li>
     </ul>
