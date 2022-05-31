@@ -1,0 +1,11 @@
+.menu_line {
+    border-top: solid 3px #808080;
+    border-bottom: solid 3px #808080;
+    margin: 10px 5% 10px 5%;
+    font-size: 25px;
+    padding: 3px 0px 3px 0px;
+    border-color: gray;
+}
+* {
+    font-family: 'Gowun Batang', serif;
+}

@@ -38,13 +38,13 @@
 
     <ul id="menu" style="text-align: center;">
     <?php if(!$userid){  ?>
-        <li class="join"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
+        <li class="join" style="font-size: 20px;"><a class="side_menu" href="/cc/member/member_join.php">회원가입</a></li>
 
-        <li class="join2"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
+        <li class="join2" style="font-size: 20px;"><a class="side_menu" href="/cc/member/login.php">로그인</a></li>
         <li class="join_line"></li>
     <?php }else{ ?>
         
-        <li class="join3"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
+        <li class="join3" style="font-size: 25px;"><a class="side_menu" href="/cc/member/logout.php">로그아웃</a></li>
 
         <li class="join_line"></li>
     <?php }?>
@@ -53,7 +53,7 @@
     
             
     <ul>
-        <li id="big2" class="big_menu"><a class="side_menu" href="#">한식</a>
+        <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">한식</a>
             <ul id="small2" class="small_menu">
                 <?php
                 include 'dbconn.php';
@@ -61,7 +61,7 @@
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                echo '<li style="margin-top:5px;"><a class="side_menu" href="' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                echo '<li style="font-size: 17px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
                 }
             }   else{
                     echo "정보가 없습니다.";
@@ -69,7 +69,7 @@
                 ?>
             </ul>
         </li>
-        <li id="big2" class="big_menu"><a class="side_menu" href="#">일식</a>
+        <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">일식</a>
             <ul id="small2" class="small_menu">
                 <?php
                 include 'dbconn.php';
@@ -77,7 +77,7 @@
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                echo '<li style="margin-top:5px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                echo '<li style="font-size: 17px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
                 }
             }   else{
                     echo "정보가 없습니다.";
@@ -95,3 +95,7 @@
     </ul>
 
 </div>
+
+<style>
+* {font-family: 'Gowun Batang', serif;}
+</style>

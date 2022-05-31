@@ -16,7 +16,7 @@ div.sidebar {
 }
 
 
-* {margin:0;padding:0;box-sizing:border-box;}
+* {margin:0;padding:0;box-sizing:border-box;font-family: 'Gowun Batang', serif;}
 ul, li {list-style:none;}
 
 #menu {
@@ -26,20 +26,17 @@ ul, li {list-style:none;}
 }
 
 #menu > .join {
-    font-family: 'Dongle'!important;
-    font-size: 35px;
+    font-size: 20px;
     padding-left: 10%;
     float: left;
 }
 
 #menu > .join2 {
-    font-family: 'Dongle'!important;
-    font-size: 35px;
+    font-size: 20px;
     padding-left: 10%;
 }
 
 #menu > .join3 {
-    font-family: 'Dongle'!important;
     font-size: 35px;
     text-align: center;
 }
@@ -65,15 +62,14 @@ ul, li {list-style:none;}
 .sidebar > ul > .big_menu {
     position: relative;
     padding: 8px 8px 0px 10%;
-    font-family: 'Dongle'!important;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sidebar > ul > .big_menu > .small_menu {
     position: relative;
     /*transform: scaleY(0);*/
     padding: 8px 8px 8px 10%;
-    font-family: 'Dongle'!important;
     font-size: 25px;
     transition: 0.35s;
+    margin-top: 5px;
 }

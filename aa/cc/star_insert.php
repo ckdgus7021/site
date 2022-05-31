@@ -23,7 +23,7 @@
         exit;
     }
 
-    include "../dbconn.php";
+    include "./dbconn.php";
    
     $sql= "SELECT * FROM star WHERE id='$userid' and restaurant='$restaurant'";
     $result=mysqli_query($conn, $sql);

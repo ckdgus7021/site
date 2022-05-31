@@ -172,7 +172,7 @@
             </ul>
 <div class="top_nav">
 <div class="nav" style="border: solid 1px;">
-    한식<br><img src="./img/gkstlr.png" style="width: 25px; height: 25px;">
+    <label><a href="./한식.php">한식<br><img src="./img/gkstlr.png" style="width: 25px; height: 25px;"></a><label>
 </div>
 <div class="nav" style="border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px;">
     중식<br><img src="./img/wndtlr.png" style="width: 25px; height: 25px;">
@@ -269,5 +269,9 @@
 
     </body>
 
+
+    <style>
+    a {-webkit-tap-highlight-color : transparent;text-decoration: none; color: black;}
+    </style>
 
 </html>
