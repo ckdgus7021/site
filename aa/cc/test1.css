@@ -1,10 +1,10 @@
 
 [name="slide"] {display:none;}
 .slidebox {max-width:1000px;width:100%;margin:0 auto;text-align:center;}
+.slidebox ul li a {text-align: left;}
 .slidebox img {max-width:100%;}
 .slidebox .slidelist {
 	white-space:nowrap;
-	font-size:0;
 	overflow:hidden;
 }
 .slidebox .slideitem {

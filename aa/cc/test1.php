@@ -93,12 +93,16 @@
 
 </style>
 
+<?php
+include 'dbconn.php';
 
+$sql = "SELECT round(avg(star),2), restaurant.* 
+FROM restaurant left join star on restaurant.restaurant=star.restaurant group by restaurant.restaurant order by round(avg(star),2) desc limit 5";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_row($result);
+$row_num = mysqli_num_rows($result);
 
-
-
-
-
+?>
 
 
         <div class="slidebox">
@@ -113,63 +117,24 @@
 
             <ul class="slidelist">
 
-                <li class="slideitem">
+            <?php
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_row($result)) {
+        echo '<li class="slideitem" style="border: solid 1px;">
 
-                    <div>
+        <div>
+            <img src="./img/' . $row[4] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;">' . $row[1] . '<br>' . $row[3] . '</a>
+        </div>
 
-                        <label for="slide04" class="left"></label>
-
-                        <label for="slide02" class="right"></label>
-
-                        <a><img src="img/slide01.jpg"></a>
-
-                    </div>
-
-                </li>
-
-                <li class="slideitem">
-
-                    <div>
-
-                        <label for="slide01" class="left"></label>
-
-                        <label for="slide03" class="right"></label>
-
-                        <a><img src="img/slide02.jpg"></a>
-
-                    </div>
-
-                </li>
-
-                <li class="slideitem">
-
-                    <div>
-
-                        <label for="slide02" class="left"></label>
-
-                        <label for="slide04" class="right"></label>
-
-                        <a><img src="img/slide03.jpg"></a>
-
-                    </div>
-
-                </li>
-
-                <li class="slideitem">
-
-                    <div>
-
-                        <label for="slide03" class="left"></label>
-
-                        <label for="slide01" class="right"></label>
-
-                        <a><img src="img/slide04.jpg"></a>
-
-                    </div>
-
-                </li>
+    </li>';
+    }
+    }else{
+    }
+    mysqli_close($conn);
+?>
 
             </ul>
+</div>
 <div class="top_nav">
 <div class="nav" style="border: solid 1px;">
     <label><a href="./한식.php">한식<br><img src="./img/gkstlr.png" style="width: 25px; height: 25px;"></a><label>
@@ -261,7 +226,7 @@
 <?php include "./random_rec.php" ?>
 <div>
     <a href="./board/board.php"><img src="./img/9k.png" style="width: 50px; height: 50px;"></a>
-    <a href="./board/board_1.php"><img src="./img/2Q.png" style="width: 50px; height: 50px;"></a>
+    <a href="./slide.php"><img src="./img/2Q.png" style="width: 50px; height: 50px;"></a>
 </div>
 
         </div>
