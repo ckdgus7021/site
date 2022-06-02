@@ -10,13 +10,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 </head>
 <header>
 	<?php include "../header.php"; ?>
 </header>
 <body>
 <div id="board_area"> 
-  <span class="board_title">여기 모여라!</span>
+  <span class="board_title" style="position: relative; display: inline-block; margin: 20px 0px 10px 0px;">여기 모여라!</span>
     <table class="list-table">
       <thead>
           <tr>
@@ -37,7 +38,7 @@ if(isset($_GET['page'])){
         $sql1 = "select * from board";
         $result1=mysqli_query($conn, $sql1);
         $row_num = mysqli_num_rows($result1);
-        $list = 8;
+        $list = 12;
         $block_ct = 5;
 
         $block_num = ceil($page/$block_ct);
@@ -99,16 +100,16 @@ if ($board['date']==date('Y-m-d')) {
         <?php
           if($page <= 1)
           {
-            echo "<li class='paging' id='fo_re'>처음</li>"; 
+            echo "<li class='paging' id='fo_re'><<</li>"; 
           }else{
-            echo "<li class='paging'><a href='?page=1'>처음</a></li>";
+            echo "<li class='paging'><a href='?page=1'><<</a></li>";
           }
           if($page <= 1)
           {
             
           }else{
           $pre = $page-1;
-            echo "<li class='paging'><a href='?page=$pre'>이전</a></li>";
+            echo "<li class='paging'><a href='?page=$pre'><</a></li>";
           }
           for($i=$block_start; $i<=$block_end; $i++){ 
             
@@ -121,22 +122,27 @@ if ($board['date']==date('Y-m-d')) {
           if($page >= $total_page){
           }else{
             $next = $page + 1;
-              echo "<li class='paging'><a href='?page=$next'>다음</a></li>";
+              echo "<li class='paging'><a href='?page=$next'>></a></li>";
           }
           if($page >= $total_page){
-            echo "<li class='paging' id='fo_re'>마지막</li>";
+            echo "<li class='paging' id='fo_re'>>></li>";
           }else{
-            echo "<li class='paging'><a href='?page=$total_page'>마지막</a></li>";
+            echo "<li class='paging'><a href='?page=$total_page'>>></a></li>";
           }
         ?>
       </ul>
+      <a href="./board_write.php" style="float: right; margin: 20px;"><button>글쓰기</button></a>
     </div>
 
 
-    <div id="write_btn">
-      <a href="./board_write.php"><button>글쓰기</button></a>
-    </div>
+  
   </div>
 </body>
+<style>
+* {
+  font-family: 'Gowun Batang', serif;
+}
+
+</style>
 </html>
 

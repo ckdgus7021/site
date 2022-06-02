@@ -34,8 +34,17 @@ $row = mysqli_fetch_assoc($result);
 <span class="rest"><?php echo $row['restaurant']; ?></span>
 <br><span class="star"><?php echo '★' .$row['round(avg(star),2)']; ?></span>
 <br>
-<div><a href="#" class="openMask"><img src="./img/9kk.png" style="width: 50px; height: 50px;";></a></div>
-<?php include "./star.php" ?>
+<form name="myform" id="myform" method="post" action="./star_insert.php">
+    <fieldset>
+    <input type="text" name="restaurant" value="<?php echo $rest ?>" style="display: none;">
+        <input type="radio" name="star" value="5" id="rate1"><label for="rate1">⭐</label>
+        <input type="radio" name="star" value="4" id="rate2"><label for="rate2">⭐</label>
+        <input type="radio" name="star" value="3" id="rate3"><label for="rate3">⭐</label>
+        <input type="radio" name="star" value="2" id="rate4"><label for="rate4">⭐</label>
+        <input type="radio" name="star" value="1" id="rate5"><label for="rate5">⭐</label>
+    </fieldset>
+    <br><input type="submit" name="btn" value="별점주기" style="margin-top: 10px;">
+</form>
 <span class="hour"><?php echo $row['businesshours']; ?></span>
 </div>
 <?php
@@ -67,13 +76,19 @@ include "./map.php";
   <div class="menu_line">
       MENU
   </div>
-  <table style="margin: auto;">
+  <table style="margin: auto; width: 80%;">
   <?php 
   
    if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
     ?>
-        <tr><td><?php echo $row['menu']; ?></td><td>&nbsp;&nbsp;&nbsp;-----------------&nbsp;&nbsp;&nbsp;</td><td><?php echo $row['price']; ?>원</td></tr>
+        <!--<tr><td><?php //echo $row['menu']; ?></td><td>&nbsp;&nbsp;&nbsp;-----------------&nbsp;&nbsp;&nbsp;</td><td><?php //echo $row['price']; ?>원</td></tr>-->
+        <tr><td><?php echo $row['menu']; ?></td>
+        <td><?php echo '<form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=hidden name="restaurant" value="' . $row['restaurant'] . '">
+     <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
+     <label><input type=submit value=추천 style="display: none;"><i class="fa-regular fa-thumbs-up" style="border: 2px solid #000;
+     padding: 3px; color: #000; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form>' ?></td></tr>
+        <tr><td style="float: right;"><?php echo $row['price']; ?></td></tr>
 
    <?php
    } echo '</table>';

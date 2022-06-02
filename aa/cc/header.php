@@ -19,7 +19,7 @@
 
 
 
-<a href="/cc/test1.php"><img src="/cc/img/bbbb.png" style="height: 85px; width: 100%; position: absolute; padding-left: 5px; top: 0; background-color: #b7eff8;"></a>
+<div><a href="/cc/test1.php"><img src="/cc/img/title2.jpg" style="height: 70px; width: 90%; position: absolute; padding-left: 95px; top: 0;"></a></div>
 <input type="checkbox" id="menuicon">
 
     <label for="menuicon">

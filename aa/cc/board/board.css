@@ -4,14 +4,15 @@
 * {
 	margin: 0 auto;
 	padding: 0;
-	font-family: 'Dongle'!important;
+	font-family: 'Gowun Batang', serif;
 }
 .board_title {
-	font-size: 80px
+	font-size: 40px
 }
 a {
+	-webkit-tap-highlight-color : transparent;
 	text-decoration: none;
-	color:#333;
+	color: black;
 }
 ul li {
 	list-style:none;
@@ -31,20 +32,20 @@ ul li {
 	position: relative;
 }
 .list-table {
-	margin-top: -20px;
+	margin-top: 0px;
 }
 .list-table thead th{
 	height:40px;
 	border-top:2px solid #09C;
 	border-bottom:1px solid #CCC;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 12px;
 }
 .list-table tbody td{
 	text-align:center;
 	padding:0px;
 	border-bottom:1px solid #CCC; height:20px;
-	font-size: 14px 
+	font-size: 7px 
 }
 #write_btn {
 	position: absolute;
@@ -58,7 +59,7 @@ ul li {
 	white-space: nowrap;
 	overflow: hidden;
 	display: block;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 /*paging*/
@@ -88,7 +89,6 @@ ul li {
 	display: inline-block;
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family:Tahoma;
 	background: #ccc;
 	color: #000;
 	text-decoration: none;
@@ -97,7 +97,6 @@ ul li {
 	display: inline-block;
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family:Tahoma;
 	background: #ccc;
 	color: #000;
 	text-decoration: none;

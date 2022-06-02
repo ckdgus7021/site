@@ -18,33 +18,33 @@ echo "<style>
 </style>";
 
 
-echo '<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-function wrapWindow(){
-    var maskHeight = $(document).height();
-    var maskWidth = $(document).width();  
+//echo '<script src="http://code.jquery.com/jquery-latest.js"></script>
+//<script>
+//function wrapWindow(){
+//    var maskHeight = $(document).height();
+//    var maskWidth = $(document).width();  
 
-    $("#mask").css({"width":maskWidth,"height":maskHeight});  
-    $("#mask").fadeTo(400,0.8);    
-    $(".window").show();
-}
+//    $("#mask").css({"width":maskWidth,"height":maskHeight});  
+//    $("#mask").fadeTo(400,0.8);    
+//    $(".window").show();
+//}
 
-$(document).ready(function(){
-    $(".openMask").click(function(e){
-        e.preventDefault();
-        wrapWindow();
-    });
+//$(document).ready(function(){
+//    $(".openMask").click(function(e){
+//        e.preventDefault();
+//        wrapWindow();
+//    });
     
-    $("#mask").click(function () {
-        $(this).hide();
-        $(".window").hide();
-    });
-});
-function rrr(){
-    $("#random_rec").load(location.href + " #random_rec");
-}
-</script>
-<div id="mask" style="position: absolute;"></div>
+//    $("#mask").click(function () {
+//        $(this).hide();
+//        $(".window").hide();
+//    });
+//});
+//function rrr(){
+//    $("#random_rec").load(location.href + " #random_rec");
+//}
+//</script>
+echo '<div id="mask" style="position: absolute;"></div>
 <div class="window" style="position: absolute; width: 240px; height: 180px; border: solid 1px #2199e8; border-radius: 8px; margin-top: 20%;">
 <div id="random_rec" style="position: absolute; background-color: white; width: 100%; height: 100%; border: solid 1px #2199e8; border-radius: 8px;">
 <h1>별점주기</h1><br>

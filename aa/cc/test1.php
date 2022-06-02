@@ -168,14 +168,16 @@ if (mysqli_num_rows($result) > 0) {
         $sql = 
         "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
         from menu left join rec on menu.menu=rec.menu 
-        where rec.date=CURDATE() - INTERVAL 24 DAY group by menu.menu order by sum(recommend) desc limit 10";
+        where rec.date=CURDATE() - INTERVAL 0 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
         $result = mysqli_query($conn, $sql);
+        $i=1;
         if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
         echo '<table id="qq" class="ee"><tr>';
-        echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $row['restaurant'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
+        echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $i .$row['menu'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
         echo "</tr></table>";
+        $i=$i+1;
         } 
         }else{
         echo "메뉴 정보가 없습니다.";

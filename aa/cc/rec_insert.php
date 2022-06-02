@@ -1,5 +1,5 @@
 <?php
-    include "../session_start.php";
+    include "./session_start.php";
 
     $restaurant=$_POST['restaurant'];
     $rec=$_POST['rec'];
@@ -17,10 +17,19 @@
     }
 
 
-    include "../dbconn.php";
+    include "./dbconn.php";
    
-  
-
+    $sql= "SELECT * FROM rec WHERE id='$userid' and menu='$menu'";
+    $result=mysqli_query($conn, $sql);
+    $rowNum= mysqli_num_rows($result);
+    if ($rowNum){
+        $sql = "DELETE from rec where id='$userid' and menu='$menu'";
+        echo "
+        <script>
+        window.location = document.referrer;
+        </script>
+    ";
+    }else{
     $sql= "INSERT INTO rec(restaurant, menu, id, recommend, date) VALUES('$restaurant','$menu','$userid','$rec', '$date')";
  
     mysqli_query($conn,$sql);
@@ -28,9 +37,10 @@
 
     echo "
         <script>
-        alert('완료');
         window.location = document.referrer;
         </script>
     ";
+    }
+    
 
 ?>
