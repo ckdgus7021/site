@@ -185,9 +185,9 @@ if (mysqli_num_rows($result) > 0) {
         ?>
     </div>
     <div id="right">
-        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 10px 0px;">
-        <span class="board_title" style="font-size: 22px;">여기 모여라!</span>
-        <a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; margin-left: 13%; margin-right: 3%; font-size:15px; padding: 0;">더보기 +</a>
+        <div style="border-bottom: solid 1px; margin: 1px 4px 0px 4px; padding: 4px 0px 6px 0px; display: flex; justify-content: space-between;">
+        <div class="board_title" style="font-size: 22px;">여기 모여라!</div>
+        <div><a href="/cc/board/board.php" style="text-decoration: none; -webkit-tap-highlight-color : transparent; color: black; font-size:15px; padding: 0;">더보기 +</a></div>
         </div>
             <table class="list-table">
       <thead>
