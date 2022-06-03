@@ -135,7 +135,7 @@ a {
 .board_title {
 	font-size: 20px;
 	float: left;
-	margin: 0px 0px 0px 8px;
+	margin: 0px 0px 0px 0px;
 }
 .board_top {
 	width: 70%;
