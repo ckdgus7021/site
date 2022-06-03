@@ -24,6 +24,8 @@
     $rowNum= mysqli_num_rows($result);
     if ($rowNum){
         $sql = "DELETE from rec where id='$userid' and menu='$menu'";
+        mysqli_query($conn,$sql);
+        mysqli_close($conn);
         echo "
         <script>
         window.location = document.referrer;

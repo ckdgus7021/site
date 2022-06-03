@@ -67,7 +67,9 @@ ul li {
 	width: 100%;
 	font-size: 20px;
 	text-align: center;
-	margin-top:30px;
+	margin-top:0px;
+	display: flex;
+	justify-content: space-between;
 }
 #page_num ul {
 	display: table;
