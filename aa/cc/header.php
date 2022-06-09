@@ -69,6 +69,22 @@
                 ?>
             </ul>
         </li>
+        <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">중식</a>
+            <ul id="small2" class="small_menu">
+                <?php
+                include 'dbconn.php';
+                $sql = "select * from restaurant where category='중식'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)){
+                echo '<li style="font-size: 17px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                }
+            }   else{
+                    echo "정보가 없습니다.";
+                }
+                ?>
+            </ul>
+        </li>
         <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">일식</a>
             <ul id="small2" class="small_menu">
                 <?php
@@ -85,11 +101,36 @@
                 ?>
             </ul>
         </li>
-        <li id="big1" class="big_menu"><a class="side_menu" href="#">MENU1</a>
-            <ul id="small1" class="small_menu">
-                <li><a class="side_menu" href="/cc/rest1.php">small menu1</a></li>
-                <li><a class="side_menu" href="/cc/paging/paging.php">small menu2</a></li>
-                <li><a class="side_menu" href="/cc/total.php">small menu3</a></li>
+        <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">양식</a>
+            <ul id="small2" class="small_menu">
+                <?php
+                include 'dbconn.php';
+                $sql = "select * from restaurant where category='양식'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)){
+                echo '<li style="font-size: 17px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                }
+            }   else{
+                    echo "정보가 없습니다.";
+                }
+                ?>
+            </ul>
+        </li>
+        <li id="big2" class="big_menu" style="font-size: 28px;"><a class="side_menu" href="#">기타</a>
+            <ul id="small2" class="small_menu">
+                <?php
+                include 'dbconn.php';
+                $sql = "select * from restaurant where category='기타'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)){
+                echo '<li style="font-size: 17px;"><a class="side_menu" href="/cc/rest.php?rest=' . $row["restaurant"] . '">' . $row["restaurant"] . '</a></li>';
+                }
+            }   else{
+                    echo "정보가 없습니다.";
+                }
+                ?>
             </ul>
         </li>
     </ul>
