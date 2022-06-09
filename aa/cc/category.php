@@ -39,7 +39,7 @@ $category=$_GET['category'];
    if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
      echo "<table id='qq' class='ee'><tr>";
-     echo '<th><img style="width: 50px; height: 50px;" src="./img/rest/'.$row['image'].'" >'. '</th>';
+     echo '<th><img style="width: 50px; height: 50px;" src="./img/rest'.$row['image'].'" >'. '</th>';
      echo '<td class=abc><a class = "rest_title" href="./rest.php?rest=' . $row['restaurant'] . '">' . $row['restaurant'] . '</a><span class="rest_star">&nbsp;★' . $row['round(avg(star),2)'] .'</span><br>
      <span class="rest_hour">' . $row['businesshours'] . '</span>';
      echo "</tr></table>";

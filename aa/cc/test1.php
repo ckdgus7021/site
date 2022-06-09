@@ -97,8 +97,9 @@
 <?php
 include 'dbconn.php';
 
-$sql = "SELECT round(avg(star),2), restaurant.* 
-FROM restaurant left join star on restaurant.restaurant=star.restaurant group by restaurant.restaurant order by round(avg(star),2) desc limit 5";
+//$sql = "SELECT round(avg(star),2), restaurant.* 
+//FROM restaurant left join star on restaurant.restaurant=star.restaurant group by restaurant.restaurant order by round(avg(star),2) desc limit 5";
+$sql = "select * from restaurant where restaurant='via 246' and where restaurant='스타동' and where restaurant='서경꼬마김밥' and where restaurant='카츠선'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 $row_num = mysqli_num_rows($result);
@@ -119,19 +120,30 @@ $row_num = mysqli_num_rows($result);
             <ul class="slidelist">
 
             <?php
+//if (mysqli_num_rows($result) > 0) {
+//    while($row = mysqli_fetch_row($result)) {
+//        echo '<li class="slideitem" style="border: solid 1px;">
+
+//        <div>
+//            <img src="./img/rest/' . $row[4] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;">' . $row[1] . '<br>' . $row[3] . '</a>
+//        </div>
+
+//    </li>';
+//    }
+//    }else{
+//    }
+//    mysqli_close($conn);
 if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_row($result)) {
-        echo '<li class="slideitem" style="border: solid 1px;">
+while ($row = mysqli_fetch_row($result)){
+echo '<li class="slideitem" style="border: solid 1px;">
 
         <div>
-            <img src="./img/rest/' . $row[4] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;">' . $row[1] . '<br>' . $row[3] . '</a>
+            <a href="./rest.php?rest=' . $row['restaurant'] . '"><img src="./img/slide/' . $row['slide'] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;"></a>
         </div>
 
     </li>';
+    }}else{
     }
-    }else{
-    }
-    mysqli_close($conn);
 ?>
 
             </ul>
