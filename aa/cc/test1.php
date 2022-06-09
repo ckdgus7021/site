@@ -139,16 +139,16 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 <div class="top_nav">
 <div class="nav" style="border: solid 1px;">
-    <label><a href="./category.php?category=한식">한식<br><img src="./img/gkstlr.png" style="width: 25px; height: 25px;"></a><label>
+    <label><a href="./category.php?category=한식">한식<br><img src="./img/gkstlr1.png" style="width: 25px; height: 25px;"></a><label>
 </div>
 <div class="nav" style="border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px;">
-    <label><a href="./category.php?category=중식">중식<br><img src="./img/wndtlr.png" style="width: 25px; height: 25px;"></a><label>
+    <label><a href="./category.php?category=중식">중식<br><img src="./img/wndtlr1.png" style="width: 25px; height: 25px;"></a><label>
 </div>
 <div class="nav" style="border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px;">
-    <label><a href="./category.php?category=일식">일식<br><img src="./img/dlftlr.png" style="width: 25px; height: 25px;"></a><label>
+    <label><a href="./category.php?category=일식">일식<br><img src="./img/dlftlr1.png" style="width: 25px; height: 25px;"></a><label>
 </div>
 <div class="nav" style="border: solid 1px; border-top: 0;">
-    <label><a href="./category.php?category=양식">양식<br><img src="./img/didtlr.png" style="width: 25px; height: 25px;"></a><label>
+    <label><a href="./category.php?category=양식">양식<br><img src="./img/didtlr1.png" style="width: 25px; height: 25px;"></a><label>
 </div>
 <div class="nav" style="border-right: solid 1px; border-bottom: solid 1px;">
     <label><a href="./category.php?category=기타">기타<br><img src="./img/dot.png" style="width: 25px; height: 20px;"></a><label>
