@@ -32,7 +32,7 @@ ul li {
 	position: relative;
 }
 .list-table {
-	margin-top: 0px;
+	margin: auto;
 }
 .list-table thead th{
 	height:40px;

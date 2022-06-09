@@ -16,7 +16,7 @@ else {}
 ?>
 <body>
     <div id="board_write" style="width: 100%;">
-        <h1><a href="./board.php" style="-webkit-tap-highlight-color : transparent; text-decoration: none; color: black;">자유게시판</a></h1>
+        <h1><a href="./board.php" style="-webkit-tap-highlight-color : transparent; text-decoration: none; color: black; font-family: 'Nanum Pen Script', cursive;">어딨니 내 소울메EAT...☆</a></h1>
         <h4>글을 작성하는 공간입니다.</h4>
             <div id="write_area">
                 <form action="board_insert.php" method="post">

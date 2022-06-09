@@ -15,16 +15,12 @@
 </head>
 <body>
     <div id="board_write">
-        <h1><a href="/">자유게시판</a></h1>
+        <h1 style="font-family: 'Nanum Pen Script', cursive;"><a href="./board.php">어딨니 내 소울메EAT...☆<</a></h1>
         <h4>글을 수정합니다.</h4>
             <div id="write_area">
                 <form action="board_update.php?num=<?php echo $bno; ?>" method="post">
                     <div id="in_title">
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>
-                    </div>
-                    <div class="wi_line"></div>
-                    <div id="in_name">
-                        <textarea name="name" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required><?php echo $board['id']; ?></textarea>
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_content">

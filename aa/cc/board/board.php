@@ -11,19 +11,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
 </head>
 <header>
 	<?php include "../header.php"; ?>
 </header>
 <body>
 <div id="board_area"> 
-  <span class="board_title" style="position: relative; display: inline-block; margin: 20px 0px 10px 0px;">여기 모여라!</span>
+  <span class="board_title" style="position: relative; display: inline-block; margin: 20px 0px 10px 0px; padding-left: 15px; font-family: 'Nanum Pen Script', cursive;">어딨니 내 소울메EAT...☆</span>
   
     <table class="list-table">
       <thead>
           <tr>
               <th>번호</th>
-                <th width="89.8%">제목</th>
+                <th width="86%">제목</th>
                 <!--<th width="10%">글쓴이</th>
                 <th width="10%">작성일</th>-->
                 <th>조회수</th>
@@ -76,9 +81,9 @@ if(isset($_GET['page'])){
       <tbody>
         <tr>
           <td><?php echo $board['num']; ?></td>
-          <td width="87%" style="text-align: left; padding-left: 5%;">
+          <td width="80%" style="text-align: left; padding-left: 5%;">
 <?php 
-echo '<a href="/cc/board/board_read.php?num=' . $board["num"] . '"><span class="title">' . $title . '</span></a><span style="color: #808080;">' . $board['id'] . '&nbsp;&nbsp;&nbsp;';
+echo '<a href="/cc/board/board_read.php?num=' . $board["num"] . '"><span class="title">' . $title . '</span></a><span style="color: #808080;">' . $board['id'] . '&nbsp;|&nbsp;';
 if ($board['date']==date('Y-m-d')) {
   echo $board['time'];}
   else{
@@ -147,6 +152,9 @@ if ($board['date']==date('Y-m-d')) {
 .paging {
   padding-left: 0;
   padding-right: 0;
+}
+.list-table {
+	margin: auto;
 }
 
 </style>

@@ -2,6 +2,7 @@
 	width:100%;
 	position: relative;
 	word-break:break-all;
+	margin-bottom: -90px;
 }
 #user_info {
 	font-size:14px;
@@ -23,9 +24,15 @@
 	font-size:14px;
 	color:#333;
 	position: absolute;
-	right: 0;
+	left: 0;
+	bottom: 0;
 }
 #bo_ser > ul > li {
 	float:left;
 	margin-left:10px;
+}
+a {
+	-webkit-tap-highlight-color : transparent;
+	text-decoration: none;
+	color: black;
 }
