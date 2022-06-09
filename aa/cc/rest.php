@@ -29,7 +29,7 @@ FROM restaurant left join star on restaurant.restaurant=star.restaurant where re
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
-<img src="./img/rest/<?php echo $row['image']; ?>" class="rest_img">
+<img style="width: 130px; height: 130px;" src="./img/rest/<?php echo $row['image']; ?>" class="rest_img">
 <div style="margin-top: 50px;">
 <span class="rest"><?php echo $row['restaurant']; ?></span>
 <br><span class="star"><?php echo '★' .$row['round(avg(star),2)']; ?></span>
