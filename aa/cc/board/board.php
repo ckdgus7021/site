@@ -18,7 +18,7 @@
 <body>
 <div id="board_area"> 
   <span class="board_title" style="position: relative; display: inline-block; margin: 20px 0px 10px 0px;">여기 모여라!</span>
-  <a href="./board_write.php" style="float: right; margin: 40px 20px 0px 20px;"><button>글쓰기</button></a>
+  
     <table class="list-table">
       <thead>
           <tr>
@@ -39,7 +39,7 @@ if(isset($_GET['page'])){
         $sql1 = "select * from board";
         $result1=mysqli_query($conn, $sql1);
         $row_num = mysqli_num_rows($result1);
-        $list = 10;
+        $list = 8;
         $block_ct = 5;
 
         $block_num = ceil($page/$block_ct);
@@ -143,6 +143,10 @@ if ($board['date']==date('Y-m-d')) {
 <style>
 * {
   font-family: 'Gowun Batang', serif;
+}
+.paging {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 </style>

@@ -11,8 +11,8 @@ echo "<style>
 .window{
   display: none;
   position:absolute;
-  left:100px;
-  top:100px;
+  left: 50px;
+  top:0px;
   z-index:10000;
 }
 </style>";
@@ -49,12 +49,15 @@ function rrr(){
 }
 </script>
 <div id="mask" style="position: absolute;"></div>
-<div class="window" style="position: absolute; width: 200px; height: 200px; border: solid 1px #2199e8; border-radius: 8px; margin-top: 20%;">
-<div id="random_rec" style="position: absolute; background-color: yellow; width: 100%; height: 100%; border: solid 1px #2199e8; border-radius: 8px;">
-<h1>메뉴추천</h1><br>'
- . $row["menu"] .
- '<br>[' . $row["restaurant"] . 
- ']<br><br><a href="./' . $row ["restaurant"] . '.php" style="color: black">음식점이동</a><br><br>
- <a href="#" onclick="rrr();"><img style="width: 20px; height: 20px;"src="./img/2Q.png"></a>
+<div class="window" style="position: absolute; width: 300px; height: 300px; margin-top: 20%;">
+<div id="random_rec" style="position: absolute; width: 100%; height: 100%;">
+<div style="position: relative; top: 66%;"><a href="./rest.php?rest=' . $row["restaurant"] .'">'
+. $row['restaurant'] .
+'</a></div>
+<div style="position: relative; top: 78%;">'
+. $row['menu'] .
+'</div>
+<div style="position: relative; top: 88%;"><a href="#" onclick="rrr();"><img style="width: 20px; height: 20px; "src="./img/re.png"></a></div>
+<img style="width: 100%; height: 100%;" src="./img/rec25.png">
  </div></div>';
 ?>

@@ -46,7 +46,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
         <meta charset="UTF-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
         <title>test1</title>
 
         <link type="text/css" rel="stylesheet" href="./test1.css?after">
@@ -152,12 +153,13 @@ if (mysqli_num_rows($result) > 0) {
     <label><a href="./category.php?category=기타">기타<br><img src="./img/dot.png" style="width: 25px; height: 20px;"></a><label>
 </div>
 <div class="nav openMask" style="border-right: solid 1px; border-bottom: solid 1px;">
-    랜덤<br><img src="./img/dot.png" style="width: 25px; height: 20px;">
+    메뉴추천<br><img src="./img/dltp11.png" style="width: 36px; height: 28.8px;">
 </div>
 </div>
 <div>
     <div id="left">
         <?php
+        include "./random_rec.php";
         echo "<style>tr { position: relative;} </style>";
         echo "<style>th { width: 150px; padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; }</style>";
         echo "<style>td { width: 150px; padding: 10px; text-align: center; vertical-align: top; border-bottom: 1px solid #ccc;}</style>";
@@ -168,14 +170,15 @@ if (mysqli_num_rows($result) > 0) {
         $sql = 
         "SELECT menu.restaurant, menu.menu, menu.price, menu.image, sum(recommend) 
         from menu left join rec on menu.menu=rec.menu 
-        where rec.date=CURDATE() - INTERVAL 0 DAY group by menu.menu order by sum(recommend) desc limit 10";
+        where rec.date=CURDATE() - INTERVAL 5 DAY group by menu.menu order by sum(recommend) desc limit 10";
 
         $result = mysqli_query($conn, $sql);
         $i=1;
         if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
         echo '<table id="qq" class="ee"><tr>';
-        echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $i .$row['menu'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '</th>';
+        echo $i;
+        echo '<th>'. $row['menu']. '<br>'. '<a href="/cc/' . $row['menu'] . '.php"><img class=qwer src="'.$row['image'].'" ></a>'. '<br>' . $row['price'] . '원</th>';
         echo "</tr></table>";
         $i=$i+1;
         } 
@@ -224,14 +227,7 @@ if (mysqli_num_rows($result) > 0) {
     </div>
             
 </div>
-<div style="float: left; left: 30px;"><a href="#" class="openMask"><img src="./img/9kk.png" style="width: 50px; height: 50px;";></a></div>
-<?php include "./random_rec.php" ?>
-<div>
-    <a href="./board/board.php"><img src="./img/9k.png" style="width: 50px; height: 50px;"></a>
-    <a href="./slide.php"><img src="./img/2Q.png" style="width: 50px; height: 50px;"></a>
-</div>
 
-        </div>
 
 
     </body>
