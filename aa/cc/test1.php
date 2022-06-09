@@ -124,7 +124,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<li class="slideitem" style="border: solid 1px;">
 
         <div>
-            <img src="./img/' . $row[4] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;">' . $row[1] . '<br>' . $row[3] . '</a>
+            <img src="./img/rest/' . $row[4] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;">' . $row[1] . '<br>' . $row[3] . '</a>
         </div>
 
     </li>';
