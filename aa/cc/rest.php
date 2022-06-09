@@ -88,7 +88,7 @@ include "./map.php";
      <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
      <label><input type=submit value=추천 style="display: none;"><i class="fa-regular fa-thumbs-up" style="border: 2px solid #000;
      padding: 3px; color: #000; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form>' ?></td></tr>
-        <tr><td style="float: right;"><?php echo $row['price']; ?></td></tr>
+        <tr><td><?php echo $row['image']; ?></td><td style="float: right;"><?php echo $row['price']; ?></td></tr>
 
    <?php
    } echo '</table>';
