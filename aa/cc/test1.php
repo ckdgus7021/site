@@ -99,7 +99,7 @@ include 'dbconn.php';
 
 //$sql = "SELECT round(avg(star),2), restaurant.* 
 //FROM restaurant left join star on restaurant.restaurant=star.restaurant group by restaurant.restaurant order by round(avg(star),2) desc limit 5";
-$sql = "select * from restaurant where restaurant='via 246' or restaurant='스타동' or restaurant='서경꼬마김밥' or restaurant='카츠선'";
+$sql = "select * from restaurant where restaurant='via 246' or restaurant='스타동' or restaurant='서경꼬마김밥' or restaurant='카츠선' or restaurant='노브랜드버거'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 $row_num = mysqli_num_rows($result);
