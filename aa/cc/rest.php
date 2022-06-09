@@ -24,12 +24,12 @@ include "./session_start.php"
     <?php
 include 'dbconn.php';
 $rest=$_GET['rest'];
-$sql = "SELECT round(avg(star),2), restaurant.restaurant, restaurant.businesshours 
+$sql = "SELECT round(avg(star),2), restaurant.restaurant, restaurant.businesshours, restaurant.image
 FROM restaurant left join star on restaurant.restaurant=star.restaurant where restaurant.restaurant='$rest'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
-<img src="./img/2Q.png" class="rest_img">
+<img src="./img/rest/<?php echo $row['image']; ?>" class="rest_img">
 <div style="margin-top: 50px;">
 <span class="rest"><?php echo $row['restaurant']; ?></span>
 <br><span class="star"><?php echo '★' .$row['round(avg(star),2)']; ?></span>
@@ -88,7 +88,7 @@ include "./map.php";
      <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
      <label><input type=submit value=추천 style="display: none;"><i class="fa-regular fa-thumbs-up" style="border: 2px solid #000;
      padding: 3px; color: #000; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form>' ?></td></tr>
-        <tr><td><?php echo $row['image']; ?></td><td style="float: right;"><?php echo $row['price']; ?></td></tr>
+        <tr><td><img src="./img/menu/<?php echo $row['restaurant'] . "/" . $row['image']; ?>"></td><td style="float: right;"><?php echo $row['price']; ?></td></tr>
 
    <?php
    } echo '</table>';
