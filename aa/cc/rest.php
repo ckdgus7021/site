@@ -83,8 +83,8 @@ include "./map.php";
    while($row = mysqli_fetch_assoc($result)) {
     ?>
         <!--<tr><td><?php //echo $row['menu']; ?></td><td>&nbsp;&nbsp;&nbsp;-----------------&nbsp;&nbsp;&nbsp;</td><td><?php //echo $row['price']; ?>원</td></tr>-->
-        <tr><td><?php echo $row['menu']; ?></td>
-        <td><?php echo '<form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=hidden name="restaurant" value="' . $row['restaurant'] . '">
+        <tr style="border-bottom: solid 1px #868e96;"><td><?php echo $row['menu']; ?></td>
+        <td style="float: right;"><?php echo '<form name="rec" id="rec" method="post" action="./rec_insert.php"><input type=hidden name="restaurant" value="' . $row['restaurant'] . '">
      <input type=hidden name="menu", value="'. $row['menu'] .'"><input type=hidden name="rec" value=1>
      <label><input type=submit value=추천 style="display: none;"><i class="fa-regular fa-thumbs-up" style="border: 2px solid #000;
      padding: 3px; color: #000; border-radius: 5px;";>&nbsp;' . $row['sum(recommend)'] .'</i></label></form>' ?></td></tr>
