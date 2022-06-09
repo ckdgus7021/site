@@ -121,11 +121,11 @@ $row_num = mysqli_num_rows($result);
 
             <?php
 if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_row($result)) {
-        echo '<li class="slideitem" style="border: solid 1px;">
+    while($row = mysqli_fetch_assoc($result)) {
+        echo '<li class="slideitem">
 
         <div>
-            <a href="./rest.php?rest='.$row[1].'"><img src="./img/slide/' . $row[5] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;"></a>
+            <a href="./rest.php?rest='.$row['restaurant'].'"><img src="./img/slide/' . $row['slide'] . '" style="position: relative;"><a href="#" style="position: absolute; bottom: 10px; left: 10px;"></a>
         </div>
 
     </li>';
