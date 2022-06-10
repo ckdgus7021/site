@@ -124,12 +124,11 @@
     mysqli_close($conn);
 
     echo('
-        <script>
-        swal("","회원가입이 완료되었습니다.", "success")
-        .then(() => {
-            window.location.href="https://testasdqwe.herokuapp.com/cc/test1.php";
-        });
-        </script>
+    <script>
+    alert ("회원가입이 완료되었습니다.");
+    window.location = history.go(-2);
+    </script>
+";
         ');
 ?>
 </html>
